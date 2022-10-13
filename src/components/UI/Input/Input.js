@@ -4,7 +4,6 @@ import styles from "./Input.module.scss";
 const Input = (props) => {
     return(
         <div className={styles.form__group}>
-            <label>{props.label}</label>
             <input
                 type={props.type}
                 name={props.name}

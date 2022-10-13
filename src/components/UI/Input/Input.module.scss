@@ -1,13 +1,6 @@
 .form__group {
   margin: 20px 0px;
-  label {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 12px;
-    margin-bottom: 15px;
-    display: block;
-    width: 100%;
-  }
+
   input {
     width: 347px;
     height: 63px;
@@ -22,7 +15,7 @@
       color: lightgray;
     }
     &:focus {
-    //   border-width: 2px;
+      //   border-width: 2px;
       border-color: rgba(23, 96, 23, 0.788);
       outline: none;
       transition: 0.3s all;
