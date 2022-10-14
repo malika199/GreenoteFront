@@ -3,12 +3,14 @@ import Logo from "../header/logo/Logo";
 import Element from "./Element";
 import ElementsContainer from "./ElementsContainer";
 import { addFolder } from "./menuHelpers";
+import { useRouter } from "next/router";
 
 export default function MainMenu() {
   const [search, setSearch] = useState("");
+  const router = useRouter();
 
   const logout = () => {
-    localStorage.deleteItem("token");
+    localStorage.removeItem("token");
     router.push("/login");
   };
 
