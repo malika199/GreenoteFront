@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import authService from "../../services/auth.service";
-
+import Message from '../../components/UI/Message/Message'
 import Logo from "../../components/header/logo/logo";
 import SubImage from "../../components/layouts/SubImage/SubImage";
 import ButtonSubmit from "../../components/UI/ButtonSubmit/ButtonSubmit";
@@ -19,8 +19,7 @@ const Index = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    authService
-      .register(user)
+    authService.register(user)
       .then((data) => {
         console.log(data);
         if (data.message) {
@@ -29,8 +28,8 @@ const Index = () => {
           return false;
         }
         console.log("c est un nouveau user ", data);
-        localStorage.setItem("token", data.token);
-        router.push("/");
+     
+        router.push("/login");
       })
       .catch((err) => {
         console.log(err);
@@ -53,15 +52,21 @@ const Index = () => {
         <LabelForm> username </LabelForm>
         <Input
           type="text"
+          label="username"
+          id="username"
+          name="username"
           required={true}
           onChange={(e) => {
-            setUser({ ...user, nom: e.target.value });
+            setUser({ ...user, username: e.target.value });
           }}
         />
 
         <LabelForm> email </LabelForm>
         <Input
           type="text"
+          label="email"
+          id="email"
+          name="email"
           required={true}
           onChange={(e) => {
             setUser({ ...user, email: e.target.value });
@@ -71,13 +76,17 @@ const Index = () => {
         <LabelForm> password </LabelForm>
         <Input
           type="password"
+          label="password"
+          id="password"
+          name="password"
           autoComplete="off"
           required={true}
           onChange={(e) => {
             setUser({ ...user, password: e.target.value });
           }}
         />
-        <ButtonSubmit value="submit" />
+        {error && <span>{errorMessage}</span>}
+        <ButtonSubmit value="Register"/>
 
         <SubImage />
       </form>

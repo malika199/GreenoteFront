@@ -9,20 +9,25 @@ import TitlePage from "../../components/UI/Title/TitlePage";
 import LabelForm from "../../components/UI/labelForm/labelForm";
 import styles from "./login.module.scss";
 import Link from "next/link";
-
+import Message from '../../components/UI/Message/Message'
 const Index = () => {
   const router = useRouter();
 
   const [error, setError] = useState(false);
+
+  const [errorMessage, setErrorMessage] = useState("");
   const [user, setUser] = useState({});
   const handleSubmit = (e) => {
     e.preventDefault();
-    authService
-      .login(user)
+    authService.login(user)
       .then((data) => {
         console.log(data);
 
-        console.log(data.message);
+        if (data.message) {
+          setError(true)
+          setErrorMessage(data.message)
+          return ;
+        }
 
         localStorage.setItem("token", data.token);
         router.push("/");
@@ -32,8 +37,8 @@ const Index = () => {
         setError(true);
         setErrorMessage(err.message);
       });
-  };
-
+  }
+console.log(errorMessage , error);
   return (
     <div>
       <Logo />
@@ -44,8 +49,10 @@ const Index = () => {
       <LabelForm> email </LabelForm>
 
         <Input
-           type="text"
-           required={true}
+           type="email"
+           label="email"
+           id="email"
+           name="email"
 
           onChange={(e) => {
             setUser({ ...user, email: e.target.value });
@@ -54,14 +61,26 @@ const Index = () => {
         
         <LabelForm> password </LabelForm>
         <Input
-          type="password"
-          required={true}
+            type="password"
+            label="password"
+            id="password"
+            name="password"
+           
 
           onChange={(e) => {
             setUser({ ...user, password: e.target.value });
           }}
         />
-        <ButtonSubmit value="sign in" />
+         
+         
+        <ButtonSubmit value="Login" />
+        {
+                  error ? (
+                    <Message message={errorMessage} type="error"/>
+                )
+                : 
+                ""  
+                }
          <br />
          <br />
 
