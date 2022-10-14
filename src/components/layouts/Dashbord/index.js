@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from "./style.scss";
+import styles from "./style.module.scss";
+import Home from "@material-ui/icons/Home";
 
 const Index = () => {
 	return (

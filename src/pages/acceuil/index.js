@@ -1,14 +1,13 @@
 import React from 'react';
 import TitlePage from "../../components/UI/Title/TitlePage";
-import Menu from '../../components/layouts/Menu';
-import JSXStyle from 'styled-jsx/style';
-import Home from '../index';
+import Dashbord from '../../components/layouts/Dashbord';
+import Home from '../../components/layouts/Home';
 const Index = () => {
 	return (
 			<div>
 				<TitlePage title="Acceuil"/>
 				<form>
-				<Menu/>
+				<Dashbord/>
 				<Home/>
 				</form>
 			</div>
