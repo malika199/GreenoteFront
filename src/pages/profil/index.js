@@ -2,13 +2,9 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import authService from "../../services/auth.service";
 import Message from '../../components/UI/Message/Message'
-import Logo from "../../components/header/logo/logo";
-import SubImage from "../../components/layouts/SubImage/SubImage";
 import ButtonSubmit from "../../components/UI/ButtonSubmit/ButtonSubmit";
 import Input from "../../components/UI/Input/Input";
-import TitlePage from "../../components/UI/Title/TitlePage";
 import LabelForm from "../../components/UI/labelForm/labelForm";
-import Link from "next/link";
 import withAuth from "../../HOC/withAuth";
 import styles from "./profil.module.scss";
 import jwt from 'jwt-decode' ;
@@ -40,16 +36,10 @@ const Index = () => {
     }, []);
   
     return (
-        
-      
-  
       <div>
         <form method="PUT" onSubmit={(e) => handleSubmit(e)}>
-        <Logo />
         <div>
-          <label class={styles.label} > Edit account ? </label>
-
-          <strong>  <Link href="/login"><a> Login </a></Link> </strong> 
+          <label class={styles.label} > Edit account  </label>
           <br />
           <br />
         </div>
@@ -75,9 +65,8 @@ const Index = () => {
               setUser({ ...user, email: e.target.value });
             }}
           />
-                 <ButtonSubmit value="Edit"/>
+                 <ButtonSubmit value="Enregistrer"/>
 
-            <SubImage />
                 {success ? (
                     <Message type="success" message="votre profil a bien été modifié"/>
                 ) : ""
