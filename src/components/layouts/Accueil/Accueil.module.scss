@@ -1,0 +1,55 @@
+
+.form__group {
+    width: 85%;
+    height: 500px;
+    background-image: url("/images/Homebackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+    h1{
+        color: #eaeaea;
+        
+    }
+    .wrapper{
+        height: auto;
+        margin-left: 60px;
+        margin-right: 50px;
+        margin-top: 25px;
+        margin-bottom: 100px;
+        padding: 50px;
+        background-color: #000000;
+        border-radius: 50px;
+    }
+    .btnnote{
+        height: 400px;
+        width: 300px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        padding: 50px;
+        background-color: #000000;
+        border-radius: 50px;
+        color: #ddff00;
+        border: solid;
+        background-image: url("/images/plus.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50% 35%;
+    }
+    .text{
+        margin-left: 80px;
+        margin-top: 200px;
+    }
+    .text2{
+        font-weight: bolder;
+        color: #ddff00;
+        text-align: center;
+        font-family: cursive;
+        position: absolute;
+        bottom: 20%;
+        margin-left: -1%;
+    
+    
+    }
+}
