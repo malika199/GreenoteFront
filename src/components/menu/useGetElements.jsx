@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-const API = require("../../../next.config");
-
-const APIURL = API.env.NEXT_PUBLIC_API_URL;
+import { APIURL } from "../../pages/api/apiConstants";
 
 function useGetNotes({ path }) {
   const [notes, setNotes] = useState([]);

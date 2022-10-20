@@ -1,15 +1,13 @@
 const API = require("../../../next.config");
-
-const APIURL = API.env.NEXT_PUBLIC_API_URL;
+import { APIURL } from "../../pages/api/apiConstants";
 
 const addFolder = async (path) => {
-
   try {
     const response = await fetch(`${APIURL}/folders`, {
       method: "POST",
       headers: {
         authorization: localStorage.getItem("token"),
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         title: "New folder",
@@ -28,7 +26,7 @@ const addNote = async (path) => {
       method: "POST",
       headers: {
         authorization: localStorage.getItem("token"),
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         title: "New note",
