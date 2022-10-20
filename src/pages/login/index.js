@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import authService from "../../services/auth.service";
-import Logo from "../../components/header/logo/logo";
+import Logo from "../../components/header/logo/Logo";
 import SubImage from "../../components/layouts/SubImage/SubImage";
 import ButtonSubmit from "../../components/UI/ButtonSubmit/ButtonSubmit";
 import Input from "../../components/UI/Input/Input";
