@@ -12,7 +12,6 @@ const Accueil = () => {
 				<div className={styles.wrapper}>
 					<h1>NOTES</h1>
 					<input className={styles.btnnote} type={'button'} onClick={() => setnote(true)} value={'Creer une note'}/>
-					<Note/>
 				</div>
 					{note && <Creernote/>}
 				</div>
