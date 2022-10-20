@@ -3,24 +3,8 @@ const API = require("../../../next.config");
 
 const APIURL = API.env.NEXT_PUBLIC_API_URL;
 
-export default function useGetElements({ path, search }) {
-  const [folders, setFolders] = useState([]);
+function useGetNotes({ path }) {
   const [notes, setNotes] = useState([]);
-
-  const getFolders = useCallback(async () => {
-    try {
-      const response = await fetch(`${APIURL}/folders`, {
-        method: "GET",
-        headers: {
-          authorization: localStorage.getItem("token"),
-        },
-      });
-      const res = await response.json();
-      setFolders(res?.filter((el) => el.path === path));
-    } catch (err) {
-      console.log(err);
-    }
-  }, [path]);
 
   const getNotes = useCallback(async () => {
     try {
@@ -38,9 +22,40 @@ export default function useGetElements({ path, search }) {
   }, [path]);
 
   useEffect(() => {
-    getFolders();
     getNotes();
-  }, [getFolders, getNotes]);
+  }, [getNotes]);
+
+  return notes;
+}
+
+function useGetFolders({ path }) {
+  const [folders, setFolders] = useState([]);
+
+  const getFolders = useCallback(async () => {
+    try {
+      const response = await fetch(`${APIURL}/folders`, {
+        method: "GET",
+        headers: {
+          authorization: localStorage.getItem("token"),
+        },
+      });
+      const res = await response.json();
+      setFolders(res?.filter((el) => el.path === path));
+    } catch (err) {
+      console.log(err);
+    }
+  }, [path]);
+
+  useEffect(() => {
+    getFolders();
+  }, [getFolders]);
+
+  return folders;
+}
+
+function useGetElements({ path, search }) {
+  const folders = useGetFolders(path);
+  const notes = useGetNotes(path);
 
   let elements = [...folders, ...notes];
 
@@ -50,3 +65,6 @@ export default function useGetElements({ path, search }) {
 
   return elements;
 }
+
+export default useGetElements;
+export { useGetFolders, useGetNotes };
