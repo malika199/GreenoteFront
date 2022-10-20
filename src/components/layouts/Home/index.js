@@ -1,14 +1,11 @@
 import React from 'react';
 import styles from "./style.module.scss";
+import Accueil from '../Accueil/Accueil';
 
 const Index = () => {
 	return (
 			<div>
-				<p>Bonjour Greenote</p>
-				<div>
-					<p>NOTES</p>
-				
-				</div>
+				<Accueil/>
 			</div>
 	);
 }

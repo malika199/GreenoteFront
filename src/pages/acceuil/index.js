@@ -5,7 +5,6 @@ import Home from '../../components/layouts/Home';
 const Index = () => {
 	return (
 			<div>
-				<TitlePage title="Acceuil"/>
 				<form>
 				<Dashbord/>
 				<Home/>

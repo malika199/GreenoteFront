@@ -1,0 +1,39 @@
+
+.form__group {
+    width: 85%;
+    height: 500px;
+    background-image: url("/images/Homebackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+    h1{
+        color: #eaeaea;
+        
+    }
+    .wrapper{
+        height: auto;
+        margin-left: 60px;
+        margin-right: 50px;
+        margin-top: 25px;
+        margin-bottom: 100px;
+        padding: 50px;
+        background-color: #154024;
+        border-radius: 50px;
+    }
+    .btnnote{
+        height: 200px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        padding: 50px;
+        background-color: #d1f548;
+        border-radius: 50px;
+        font-size: large;
+        font-family: cursive;
+    }
+    .text{
+        margin-left: 80px;
+        margin-top: 200px;
+    }
+}
