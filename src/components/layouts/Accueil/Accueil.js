@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import styles from "./Accueil.module.scss"
 import Creernote from '../Creernote/Creernote';
-import Note from '../Note/Note';
 
 const Accueil = () => {
 	const [note, setnote] = useState(false);
@@ -11,7 +10,9 @@ const Accueil = () => {
 				<h1 className={styles.text}>Bonjour</h1>
 				<div className={styles.wrapper}>
 					<h1>NOTES</h1>
-					<input className={styles.btnnote} type={'button'} onClick={() => setnote(true)} value={'Creer une note'}/>
+					<div className={styles.btnnote} onClick={() => setnote(true)}>
+						<h1 className={styles.text2} > Créer une note </h1>
+						</div>
 				</div>
 					{note && <Creernote/>}
 				</div>
