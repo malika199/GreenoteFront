@@ -40,11 +40,10 @@ const Index = () => {
 
   return (
     <div>
-      <form method="POST" onSubmit={(e) => handleSubmit(e)}>
-        <Logo />
+      <Logo />
+      <form className={styles.label} method="POST" onSubmit={(e) => handleSubmit(e)}>
         <div>
-          <label class={styles.label} > Already have an account ? </label>
-
+          <label class={styles.label2} > Already have an account ? </label>
           <strong>  <Link href="/login"><a> Login </a></Link> </strong> 
           <br />
           <br />

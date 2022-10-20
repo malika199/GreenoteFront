@@ -38,41 +38,30 @@ const Index = () => {
         setErrorMessage(err.message);
       });
   }
-console.log(errorMessage , error);
   return (
     <div>
       <Logo />
-      <form method="POST" onSubmit={(e) => handleSubmit(e)}>
-
-     
-
-      <LabelForm> email </LabelForm>
-
+      <form className={styles.label} method="POST" onSubmit={(e) => handleSubmit(e)}>
+      <LabelForm> Email </LabelForm>
         <Input
            type="email"
            label="email"
            id="email"
            name="email"
-
-          onChange={(e) => {
+           onChange={(e) => {
             setUser({ ...user, email: e.target.value });
           }}
         />
-        
-        <LabelForm> password </LabelForm>
+        <LabelForm> Password </LabelForm>
         <Input
             type="password"
             label="password"
             id="password"
             name="password"
-           
-
-          onChange={(e) => {
+            onChange={(e) => {
             setUser({ ...user, password: e.target.value });
           }}
         />
-         
-         
         <ButtonSubmit value="Login" />
         {
                   error ? (
@@ -83,14 +72,10 @@ console.log(errorMessage , error);
                 }
          <br />
          <br />
-
-        <div>
-          <label class={styles.label} > Create an account ? </label>
-
-          <strong>  <Link href="/register"><a> sign up </a></Link> </strong> 
-         
+        <div className={styles.label2}>
+          <label> Create an account ? </label>
+          <strong>  <Link href="/register"><a> sign up </a></Link> </strong>
         </div>
-
         <SubImage />
       </form>
     </div>
