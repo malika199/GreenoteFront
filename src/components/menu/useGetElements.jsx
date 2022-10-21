@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { APIURL } from "../../pages/api/apiConstants";
 
-function useGetNotes({ path }) {
+function useGetNotes(path) {
   const [notes, setNotes] = useState([]);
 
   const getNotes = useCallback(async () => {
@@ -26,7 +26,7 @@ function useGetNotes({ path }) {
   return notes;
 }
 
-function useGetFolders({ path }) {
+function useGetFolders(path) {
   const [folders, setFolders] = useState([]);
 
   const getFolders = useCallback(async () => {
