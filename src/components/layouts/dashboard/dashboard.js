@@ -13,11 +13,11 @@ function Dashboard() {
 	// }, [])
 
 	return ( <div>
-			<div className={styles._bg___2_signup___2}  ></div>
+			<div className={styles.bg_signup}  ></div>
 
 			<div className={styles.groupe_23}  >
-				<img alt="ek_image" src="/images/kelly_sikkema_hl3ludykric_unsplash.png" className={styles.kelly_sikkema_hl3ludykric_unsplash} />
-				<div className={styles.kelly_sikkema_hl3ludykric_unsplash_ek1}  ></div>
+				<img alt="ek_image" src="/images/kelly_sikkema_hl3ludykric_unsplash.png" className={styles.kelly_sikkema} />
+				<div className={styles.kelly_ek1}  ></div>
 
 			</div>
 			<div className={styles.rectangle_39}  ></div>

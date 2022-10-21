@@ -7,9 +7,7 @@ const Mainlayout = ({children}) => {
               
             </header>
             <main>
-                <div className={styles.container}>
                     {children}
-                </div>
             </main>
             <footer>
             </footer>
