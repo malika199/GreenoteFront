@@ -1,9 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
-const API = require("../../../next.config");
+import { APIURL } from "../../pages/api/apiConstants";
 
-const APIURL = API.env.NEXT_PUBLIC_API_URL;
-
-function useGetNotes({ path }) {
+function useGetNotes(path) {
   const [notes, setNotes] = useState([]);
 
   const getNotes = useCallback(async () => {
@@ -28,7 +26,7 @@ function useGetNotes({ path }) {
   return notes;
 }
 
-function useGetFolders({ path }) {
+function useGetFolders(path) {
   const [folders, setFolders] = useState([]);
 
   const getFolders = useCallback(async () => {

@@ -1,16 +1,16 @@
 .wrapper {
-    width: 600px;
-    height: auto;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 100px;
     padding: 50px;
-    background-color: rgba(129, 92, 92, 0.44);
+    background-color: rgb(45 45 45);
     border-radius: 50px;
     position: absolute;
-    top: 27%;
-    left: 40%;
+    top: 20%;
+    left: 25%;
+    align-items: center;
     display: inline-block;
     
     
@@ -30,7 +30,8 @@
     }
     
     .text {
-        width: 500px;
+        width: 800px;
+        height: 400px;
         overflow: hidden;
         background-color: #fff;
         color: #222;
@@ -43,8 +44,8 @@
         padding-right: 100px;
         padding-top: 45px;
         padding-bottom: 34px;
-        background-image: url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png),
-        url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+        // background-image: url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png),
+        // url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
         background-repeat: repeat-y, repeat;
         -webkit-border-radius: 12px;
         border-radius: 12px;
@@ -55,13 +56,12 @@
     }
     
     .title {
-        border-bottom: 3px solid #fff;
-        color: #090909;
+        color: #dedede;
         font-size: 20px;
         font-family: Courier, monospace;
         height: 28px;
         font-weight: bold;
-        width: 220px;
+        width: 700px;
     }
     
     .button {
@@ -80,8 +80,7 @@
         border-top: 1px solid #fff;
         -webkit-box-shadow: 0px 2px 14px #000;
         box-shadow: 0px 2px 14px #000;
-        background-color: #62add6;
-        background-image: url(https://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
+        background-color: #323740;
         background-repeat: repeat-x;
     }
     

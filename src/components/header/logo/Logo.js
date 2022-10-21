@@ -9,7 +9,7 @@ const Logo = ({ children, ...restProps }) =>{
       <Link href="/" >
       <a {...restProps} >
         {children}
-        <img  className={style.Image}  src="/images/logo_greenote.png" alt="Greenote logo" />
+        <img  className={style.Image}  src="/images/logo_greenote_white.png" alt="Greenote logo" />
       </a>
       </Link>
     </div>

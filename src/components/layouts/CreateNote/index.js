@@ -1,39 +1,16 @@
 import React, { useState } from "react";
-import { useGetNotes } from "../../menu/useGetElements";
-import styles from "./createNote.module.scss";
 import { v4 as uuidv4 } from "uuid";
 
-const createLine = async (id) => {
-  try {
-    const response = await fetch(`${APIURL}/lines`, {
-      method: "POST",
-      headers: {
-        authorization: localStorage.getItem("token"),
-      },
-      body: { _id: id },
-    });
-    response.json();
-  } catch (err) {
-    console.log(err);
-  }
-};
-const updateLine = async (line) => {
-  try {
-    const response = await fetch(`${APIURL}/lines`, {
-      method: "PUT",
-      headers: {
-        authorization: localStorage.getItem("token"),
-      },
-      body: line,
-    });
-    await response.json();
-  } catch (err) {
-    console.log(err);
-  }
-};
+import styles from "./createNote.module.scss";
+
+import { useGetNotes } from "../../menu/useGetElements";
+import { createLine } from "../Line/lineHelpers";
+import { createNote } from "../Note/noteHelpers";
+
+import Line from "../Line";
 
 const Index = ({ setIsNoteDisplayed }) => {
-  const [note, setNote] = useState(null);
+  const [note, setNote] = useState({ lines: ["azeaze"] });
 
   // uuid for line
   // create line
@@ -42,6 +19,8 @@ const Index = ({ setIsNoteDisplayed }) => {
     createLine(id);
     setNote({ ...note, lines: [...note?.lines, id] });
   };
+
+  const lines = note?.lines;
 
   // edit note with line in it
 
@@ -59,7 +38,10 @@ const Index = ({ setIsNoteDisplayed }) => {
             }}
           />
         </div>
-        <textarea
+        {lines.map((lineId, i) => (
+          <Line lineId={lineId} key={i} />
+        ))}
+        {/* <textarea
           placeholder="Ecrire une note."
           className={styles.text}
           name="text"
@@ -68,9 +50,14 @@ const Index = ({ setIsNoteDisplayed }) => {
           //   setNote({ ...note, email: e.target.value });
           // }}
           styles="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "
-        ></textarea>
-        <br />
-        <input className={styles.button} type="submit" value="Create" />
+        ></textarea> */}
+        {/* <br /> */}
+        <input
+          className={styles.button}
+          onClick={() => createNote(note)}
+          type="submit"
+          value="Create"
+        />
         <input
           className={styles.button}
           onClick={() => setIsNoteDisplayed(false)}

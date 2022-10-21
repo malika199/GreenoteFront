@@ -1,0 +1,212 @@
+.menu{
+  max-height: 100%;
+  overflow-y: visible;
+
+.Rectangle {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 1);
+  overflow-y: scroll;
+  height: 100vh;
+  box-sizing: border-box;
+  border: none;
+  width: 255px;
+  
+  &::-webkit-scrollbar {
+		width: 10px;
+	}
+	&::-webkit-scrollbar:horizontal {
+		height: 10px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: transparentize(#ccc, 0.7);
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background: transparentize(#ccc, 0.5);
+		box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	}
+
+
+
+  .header_dash{
+    display: flex;
+    color:#fbfafb;
+   
+    .icon_setting{
+      width: 41px;
+      // line-height: 60px;
+      color: white;
+    }
+  }
+  
+  .greennote_team {
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    color:#fbfafb;
+
+    .span_G{
+      vertical-align: middle;
+      margin: 10px;
+    }
+  }
+  
+  .logout {
+    color: white;
+    line-height: 3;
+    display: block;
+    margin: 20px 10px;
+    padding: 0px 10px;
+
+    background-color:   #383734;
+    cursor: pointer;
+    &:hover{
+      background-color: #5c5749;
+    }
+  }
+  .Search {
+    opacity: 0.5;
+    margin-top: 5px;
+    left: 0px;
+    width: 218px;
+    height: 37px;
+    -ms-border-radius: 18.5px;
+    -o-border-radius: 18.5px;
+    -moz-border-radius: 18.5px;
+    -webkit-border-radius: 18.5px;
+    border-radius: 18.5px;
+    background: #958616;
+  }
+
+  .add {
+    top: 0px;
+    left: 0px;
+    width: 218px;
+    height: 37px;
+    margin: 7px 0px;
+    display: flex;
+    // -ms-border-radius: 18.5px;
+    // -o-border-radius: 18.5px;
+    // -moz-border-radius: 18.5px;
+    // -webkit-border-radius: 18.5px;
+    border-radius: 18.5px;
+    background: rgba(206, 206, 21, 255);
+  }
+
+  .rectangle_principale {
+    // opacity: 0.5;
+    display: flex;
+    justify-content: space-between;
+    height: 2.4rem;
+    padding: 7px; 
+    margin: 10px;
+    color: rgb(208, 208, 208);
+    cursor: pointer;
+    &:hover{
+      color: white;
+      background-color: #383734;
+    }
+  }
+
+  .rectangle_secondaire {
+    // opacity: 0.5;
+    display: flex;
+    justify-content: space-between;
+    height: 2.4rem;
+    padding: 7px; 
+    margin: 5px 10px 5px 30px;
+    color: rgb(208, 208, 208);
+    cursor: pointer;
+    &:hover{
+      color: white;
+      background-color: #383734;
+    }
+  }
+
+  .rectangle_header{
+    // opacity: 0.5;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    color: rgb(208, 208, 208);
+   
+  }
+  .Title {
+    overflow: visible;
+    // width: 92px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 1);
+    text-transform: capitalize;
+  }
+  .icones {
+    margin: 10px;
+  }
+
+  .search_input {
+    background: #cece15;
+    width: 89%;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+  }
+  .autocom_box {
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    // height: 41px;
+    width: 37px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+  }
+
+  .icon_add {
+    top: 0px;
+    // height: 41px;
+    width: 45px;
+    text-align: center;
+    line-height: 41px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+  }
+  .input {
+    opacity: 0.22;
+    fill: rgba(206, 206, 21, 1);
+    height: 38px;
+    width: 82%;
+    outline: none;
+    border: none;
+    border-radius: 30px 0px 0px 30px;
+    padding: 0 20px 0 20px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .new {
+    height: 41px;
+    width: 100%;
+    outline: none;
+    line-height: 2.1;
+    padding: 0 10px 0 10px;
+  }
+}
+
+
+}
+
