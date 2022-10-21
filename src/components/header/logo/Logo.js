@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import style from "./logo.module.scss"
+import style from "./Logo.module.scss"
 
 
 const Logo = ({ children, ...restProps }) =>{
