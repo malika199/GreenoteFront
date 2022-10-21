@@ -9,19 +9,6 @@ const Index = ({ lineId }) => {
   const [line, setLine] = useState(loadedLine || null);
 
   const [hasFocus, setHasFocus] = useState(false);
-  // setInterval(checkPageFocus, 300);
-  useInterval(() => {
-    // Your custom logic here
-    checkPageFocus();
-  }, 300);
-  const checkPageFocus = () => {
-    const input = document.getElementById("input");
-    // eslint-disable-next-line
-    console.log('## input:', input)
-    // setHasFocus(input.hasFocus());
-  };
-  // eslint-disable-next-line
-  console.log("## document:", document);
 
   // make width depend on content width
   // uuid for line
@@ -32,16 +19,25 @@ const Index = ({ lineId }) => {
     setNote({ ...note, lines: [...note?.lines, id] });
   };
   const manageElement = (e) => {
+    setHasFocus(false);
+
     if (e.code === "Space") {
       //create new element
       addLine();
       //set focus on new element
+    }
+    if (e.key === "/") {
+      setHasFocus(true);
     }
     // eslint-disable-next-line
     // console.log("## :", document.hasFocus());
     // edit element
     // setLine({ ...line, text: e.target.value });
     // updateLine(line);
+  };
+
+  const onChangeElement = () => {
+   
   };
   return (
     <div className={styles.new}>
@@ -53,6 +49,7 @@ const Index = ({ lineId }) => {
         className={styles.text3}
         placeholder="Type..."
         role="textbox"
+        onChange={(e) => onChangeElement(e)}
         onKeyPress={(e) => manageElement(e)}
       />
       {/* if focus render icon */}
