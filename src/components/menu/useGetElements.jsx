@@ -1,7 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { APIURL } from "../../pages/api/apiConstants";
 
-  const getNotes = async () => {
+function useGetNotes(path) {
+  const [notes, setNotes] = useState([]);
+
+  const getNotes = useCallback(async () => {
     try {
       const response = await fetch(`${APIURL}/notes`, {
         method: "GET",
@@ -10,15 +13,23 @@ import { APIURL } from "../../pages/api/apiConstants";
         },
       });
       const res = await response.json();
-      return res?.filter((el) => el.path === path);
+      setNotes(res?.filter((el) => el.path === path));
     } catch (err) {
       console.log(err);
     }
-  }
+  }, [path]);
 
+  useEffect(() => {
+    getNotes();
+  }, [getNotes]);
 
+  return notes;
+}
 
-  const getFolders = async ({path}) => {
+function useGetFolders(path) {
+  const [folders, setFolders] = useState([]);
+
+  const getFolders = useCallback(async () => {
     try {
       const response = await fetch(`${APIURL}/folders`, {
         method: "GET",
@@ -27,29 +38,31 @@ import { APIURL } from "../../pages/api/apiConstants";
         },
       });
       const res = await response.json();
-      return res
-     // return res?.filter((el) => el.path === path);
+      setFolders(res?.filter((el) => el.path === path));
     } catch (err) {
       console.log(err);
     }
-  };
-
-
-function useGetElements({ path, search }) {
-  const folders = getFolders(path) || [];
-  const notes = getNotes(path) || [];
+  }, [path]);
 
   useEffect(() => {
-    const notes = getNotes(path);
-    const folders = getFolders(path);
+    getFolders();
+  }, [getFolders]);
 
-  }, []);
+  return folders;
+}
 
-  
-  const elements = []
+function useGetElements({ path, search }) {
+  const folders = useGetFolders(path);
+  const notes = useGetNotes(path);
+
+  let elements = [...folders, ...notes];
+
+  if (search?.length > 0) {
+    elements = elements.filter((el) => el?.title?.includes(search));
+  }
 
   return elements;
 }
 
 export default useGetElements;
-export { getFolders, getNotes };
+export { useGetFolders, useGetNotes };
