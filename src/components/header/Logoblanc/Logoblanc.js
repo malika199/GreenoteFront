@@ -3,7 +3,7 @@ import React from "react";
 import style from "./Logo.module.scss"
 
 
-const Logo = ({ children, ...restProps }) =>{
+const Logoblanc = ({ children, ...restProps }) =>{
   return (
     <div>
       <Link href="/" >
@@ -17,4 +17,4 @@ const Logo = ({ children, ...restProps }) =>{
 }
 
 
-export default Logo;
+export default Logoblanc;

@@ -1,5 +1,6 @@
 import React from "react";
-import Dashboard from "../../components/layouts/Dashboard";
+import Home from "../../components/layouts/Home";
+import {Dashboard} from '@material-ui/icons';
 
 const Index = () => {
 	return (

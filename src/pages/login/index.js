@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import authService from "../../services/auth.service";
-import Logo from "../../components/header/logo/Logo";
+import Logonoir from '../../components/header/Logonoir/Logonoir';
 import SubImage from "../../components/layouts/SubImage/SubImage";
 import ButtonSubmit from "../../components/UI/ButtonSubmit/ButtonSubmit";
 import Input from "../../components/UI/Input/Input";
@@ -30,7 +30,7 @@ const Index = () => {
         }
 
         localStorage.setItem("token", data.token);
-        router.push("/");
+        router.push("/acceuil");
       })
       .catch((err) => {
         console.log(err);
@@ -40,7 +40,7 @@ const Index = () => {
   }
   return (
     <div>
-      <Logo />
+      <Logonoir/>
       <form className={styles.label} method="POST" onSubmit={(e) => handleSubmit(e)}>
       <LabelForm> Email </LabelForm>
         <Input

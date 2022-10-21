@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Logo from "../header/logo/Logo";
 import Element from "./Element";
 import ElementsContainer from "./ElementsContainer";
 import { addFolder } from "./menuHelpers";
@@ -9,6 +8,7 @@ import { BsPlusCircle } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { CgLogOut } from "react-icons/cg";
 import { IoMdSettings } from "react-icons/io";
+import Logoblanc from '../header/Logoblanc/Logoblanc';
 export default function MainMenu() {
   const [search, setSearch] = useState("");
   const router = useRouter();
@@ -80,7 +80,7 @@ export default function MainMenu() {
           </i>{" "}
           <span> Logout</span>
         </div>
-        <Logo />
+        <Logoblanc/>
       </div>
     </div>
   );
