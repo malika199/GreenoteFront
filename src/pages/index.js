@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import MainMenu from "../components/menu/MainMenu";
+import Home from "../components/layouts/Home";
 
-export default function Home() {
+
+export default function Homee() {
   return (
     <div >
       <Head>
@@ -12,7 +14,7 @@ export default function Home() {
       </Head>
       <main className="main">
         {/* <Titlepage title="home"/> */}
-        <MainMenu />
+        <Home />
         {/* <Dashboard/> */}
       </main>
     </div>
