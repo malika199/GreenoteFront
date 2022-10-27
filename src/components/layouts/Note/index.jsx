@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 import styles from "./createNote.module.scss";
 
 import { useGetNotes } from "../../menu/useGetElements";
 import { createLine } from "../Line/lineHelpers";
-import { createNote } from "../Note/noteHelpers";
+import { createNote } from "./noteHelpers";
 import TextArea from "../TextArea";
 
 const Index = ({ setIsNoteDisplayed }) => {

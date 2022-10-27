@@ -1,7 +1,7 @@
 const API = require("../../../next.config");
 import { APIURL } from "../../pages/api/apiConstants";
 
-const addFolder = async (path) => {
+const addFolder = async (folder) => {
   try {
     const response = await fetch(`${APIURL}/folders`, {
       method: "POST",
@@ -9,10 +9,7 @@ const addFolder = async (path) => {
         authorization: localStorage.getItem("token"),
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        title: "New folder",
-        path: path,
-      }),
+      body: folder
     });
     const res = await response.json();
   } catch (err) {
@@ -39,4 +36,20 @@ const addNote = async (path) => {
   }
 };
 
-export { addFolder, addNote };
+
+
+const deleteFolder = async (id) => {
+  try {
+    const response = await fetch(`${APIURL}/folders/${id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: localStorage.getItem("token"),
+      },
+    });
+    response.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export { addFolder, addNote, deleteFolder };

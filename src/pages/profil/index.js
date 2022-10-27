@@ -8,6 +8,7 @@ import LabelForm from "../../components/UI/labelForm/labelForm";
 import withAuth from "../../HOC/withAuth";
 import styles from "./profil.module.scss";
 import jwt from 'jwt-decode' ;
+import MainMenu from '../../components/menu/MainMenu';
 
 const Index = () => {
     const [user, setUser] = useState({});
@@ -37,7 +38,8 @@ const Index = () => {
   
     return (
       <div>
-        <form method="PUT" onSubmit={(e) => handleSubmit(e)}>
+          <MainMenu/>
+        <form className={styles.profil} method="PUT" onSubmit={(e) => handleSubmit(e)}>
         <div>
           <label class={styles.label} > Edit account  </label>
           <br />

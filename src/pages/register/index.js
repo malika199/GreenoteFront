@@ -2,16 +2,18 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import authService from "../../services/auth.service";
 import Message from '../../components/UI/Message/Message'
-import Logo from "../../components/header/logo/Logo";
 import SubImage from "../../components/layouts/SubImage/SubImage";
 import ButtonSubmit from "../../components/UI/ButtonSubmit/ButtonSubmit";
 import Input from "../../components/UI/Input/Input";
-import TitlePage from "../../components/UI/Title/TitlePage";
 import LabelForm from "../../components/UI/labelForm/labelForm";
 import Link from "next/link";
 import styles from "./register.module.scss";
+<<<<<<< HEAD
 import DropdowenMenu from  "../../components/dropdowenmenu/dropdowen"
 import Editor from "../../components/Editor";
+=======
+import Logonoir from '../../components/header/Logonoir/Logonoir';
+>>>>>>> 807de504848732ba77577ec70fc4de1bc5f59b8b
 
 const Index = () => {
   const router = useRouter();
@@ -31,7 +33,7 @@ const Index = () => {
         }
         console.log("c est un nouveau user ", data);
      
-        router.push("/login");
+        router.push("/acceuil");
       })
       .catch((err) => {
         console.log(err);
@@ -43,11 +45,15 @@ const Index = () => {
   return (
     <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <form method="POST" onSubmit={(e) => handleSubmit(e)}>
       <Editor />
         
 =======
       <Logo />
+=======
+      <Logonoir/>
+>>>>>>> 807de504848732ba77577ec70fc4de1bc5f59b8b
       <form className={styles.label} method="POST" onSubmit={(e) => handleSubmit(e)}>
 >>>>>>> origin/main
         <div>
