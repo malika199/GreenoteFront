@@ -3,7 +3,6 @@
     padding: 0;
     padding-top: 5px;
     color: black;
-    font-family: "open sans";
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -11,10 +10,80 @@
     
     .img1{
         z-index: -1;
-        width: 70%;
+        width: 65%;
         position: absolute;
         right: -40px;
         top: -75px;
+    }
+    .capecr{
+        position: absolute;
+        right: -40px;
+        top: 20%;
+        width: 40%;
+        height: 45%;
+    }
+    .Content {
+        position: absolute;
+        width: 646px;
+        height: 388px;
+        left: 83.938px;
+        top: 212px;
+        overflow: visible;
+    }
+    .Product_Growth {
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        overflow: visible;
+        width: 438px;
+        height: 27px;
+        text-align: left;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 19px;
+        color: rgba(0,0,0,1);
+    }
+    .Never_at_water {
+        left: 0px;
+        top: 283px;
+        position: absolute;
+        overflow: visible;
+        width: 570px;
+        height: 105px;
+        line-height: 35px;
+        margin-top: -7.5px;
+        text-align: left;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        color: rgba(0,0,0,1);
+    }
+    .Managing_business {
+        left: 0px;
+        top: 31px;
+        position: absolute;
+        overflow: visible;
+        width: 647px;
+        height: 252px;
+        line-height: 80px;
+        margin-top: -10px;
+        text-align: left;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 60px;
+        color: rgba(0,0,0,1);
+        letter-spacing: -0.1666666603088379px;
+    }
+    .Ellipse {
+        position: absolute;
+        overflow: visible;
+        width: 456px;
+        height: 456px;
+        left: -115px;
+        top: 790px;
+    }
+    .Ellipsep{
+        fill: rgba(206,206,21,1);
     }
     .logo{
         width: 55%;
@@ -24,6 +93,37 @@
         width: 105%;
         margin-top: 0%;
     }
+    .Content2 {
+        position: absolute;
+        width: 627px;
+        height: 132px;
+        left: 4%;
+        top: 100%;
+        overflow: visible;
+    }
+    .We_help {
+        width: 528px;
+        height: 60px;
+        line-height: 60px;
+        margin-top: -9px;
+        text-align: left;
+        font-size: 42px;
+        color: rgba(0,0,0,1);
+    }
+    .Why_kept{
+        left: 11.5px;
+        top: 90%;
+        position: absolute;
+        overflow: visible;
+        width: 605px;
+        height: 60px;
+        line-height: 30px;
+        margin-top: -5px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        color: rgba(0,0,0,1);
+    }
     .btncnx{
         background: black;
         border-radius: 8px;
@@ -32,6 +132,343 @@
         margin-left: 500px;
         margin-right: 100px;
     }
+    .Content3{
+        position: absolute;
+        width: 1126.702px;
+        height: 581px;
+        left: 20%;
+        top: 120%;
+        overflow: visible;
+    }
+    .Vector {
+        fill: transparent;
+        stroke: rgba(195,195,33,1);
+        stroke-width: 5px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        stroke-miterlimit: 4;
+        shape-rendering: auto;
+    }
+    .Vectorc {
+        filter: drop-shadow(0px 24px 48px rgba(55, 52, 169, 0.302));
+        overflow: visible;
+        position: absolute;
+        width: 1099.058px;
+        height: 530.215px;
+        left: 0px;
+        top: 41.665px;
+        transform: matrix(1,0,0,1,0,0);
+    }
+    .Content4 {
+        position: absolute;
+        width: 263px;
+        height: 214px;
+        left: 115.702px;
+        top: 367px;
+        overflow: visible;
+    }
+    .n1 {
+        opacity: 0.146;
+        left: 160px;
+        top: 0px;
+        position: absolute;
+        overflow: hidden;
+        width: 81px;
+        height: 199px;
+        text-align: left;
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 204px;
+        color: rgba(195,195,33,1);
+        letter-spacing: -0.19607843399047853px;
+    }
+    .Content5 {
+        position: absolute;
+        width: 261px;
+        height: 116px;
+        left: 2px;
+        top: 128px;
+        overflow: visible;
+    }
+    .Project_Discovery {
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        overflow: hidden;
+        width: 154px;
+        height: 29px;
+        line-height: 30px;
+        margin-top: -7px;
+        text-align: left;
+        font-family: Manrope;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        color: rgba(0,0,0,1);
+    }
+    .Party {
+        left: 0px;
+        top: 29px;
+        position: absolute;
+        overflow: visible;
+        width: 262px;
+        height: 87px;
+        line-height: 30px;
+        margin-top: -7px;
+        text-align: left;
+        font-family: Manrope;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: rgba(100,96,125,1);
+    }
+    .Content6 {
+        position: absolute;
+        width: 60px;
+        height: 62px;
+        left: 0px;
+        top: 30px;
+        overflow: visible;
+    }
+    .Rectanglec2 {
+        fill: rgba(0,0,0,1);
+    }
+    .Rectangle2 {
+        position: absolute;
+        overflow: visible;
+        width: 60px;
+        height: 62px;
+        left: 0px;
+        top: 0px;
+    }
+    .Rectanglec3 {
+        fill: rgba(195,195,33,1);
+    }
+    .Rectangle3 {
+        position: absolute;
+        overflow: visible;
+        width: 21px;
+        height: 22px;
+        left: 19px;
+        top: 19px;
+    }
+    .Content7 {
+        position: absolute;
+        width: 262.001px;
+        height: 216.001px;
+        left: 551.702px;
+        top: 239px;
+        overflow: visible;
+    }
+    .n2 {
+        opacity: 0.15;
+        left: 159px;
+        top: 0px;
+        position: absolute;
+        width: 104px;
+        height: 199px;
+        font-family: Gilroy;
+        font-size: 204px;
+        color: rgba(195,195,33,1);
+    }
+    .Content8 {
+        position: absolute;
+        width: 261px;
+        height: 118px;
+        left: 1px;
+        top: 98px;
+        overflow: visible;
+    }
+    .Project_Discovery {
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        overflow: hidden;
+        width: 154px;
+        height: 29px;
+        line-height: 30px;
+        margin-top: -7px;
+        text-align: left;
+        font-family: Manrope;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        color: rgba(0,0,0,1);
+    }
+    .His_defective {
+        left: 0px;
+        top: 31px;
+        position: absolute;
+        overflow: hidden;
+        width: 262px;
+        height: 87px;
+        line-height: 30px;
+        margin-top: -7px;
+        text-align: left;
+        font-family: Manrope;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: rgba(100,96,125,1);
+    }
+    .Content9 {
+        position: absolute;
+        width: 60px;
+        height: 62px;
+        left: 0px;
+        top: 13px;
+        overflow: visible;
+    }
+    .Rectanglec4 {
+        fill: rgba(195,195,33,1);
+    }
+    .Rectangle4 {
+        position: absolute;
+        overflow: visible;
+        width: 60px;
+        height: 62px;
+        left: 0px;
+        top: 0px;
+    }
+    .Rectanglec5 {
+        fill: rgba(0,0,0,1);
+    }
+    .Rectangle5 {
+        position: absolute;
+        overflow: visible;
+        width: 23px;
+        height: 22px;
+        left: 18px;
+        top: 20px;
+    }
+    .Content10{
+        position: absolute;
+        width: 262px;
+        height: 215.001px;
+        left: 864.702px;
+        top: 0px;
+        overflow: visible;
+    }
+    .n3 {
+        opacity: 0.15;
+        left: 249px;
+        top: 0px;
+        position: absolute;
+        width: 105px;
+        height: 199px;
+        font-family: Gilroy;
+        font-size: 204px;
+        color: rgba(195,195,33,1);
+        }
+    .Content11 {
+        position: absolute;
+        width: 261px;
+        height: 117px;
+        left: 80px;
+        top: 98px;
+        overflow: visible;
+    }
+    .Project_Discovery {
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        overflow: hidden;
+        width: 154px;
+        height: 29px;
+        line-height: 30px;
+        margin-top: -7px;
+        text-align: left;
+        font-family: Manrope;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        color: rgba(0,0,0,1);
+    }
+    .From_they {
+        left: 0px;
+        top: 30px;
+        position: absolute;
+        overflow: hidden;
+        width: 262px;
+        height: 87px;
+        line-height: 30px;
+        margin-top: -7px;
+        text-align: left;
+        font-family: Manrope;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: rgba(100,96,125,1);
+    }
+    .Content12 {
+        position: absolute;
+        width: 60px;
+        height: 61px;
+        left: 70px;
+        top: 14px;
+        overflow: visible;
+    }
+    .Rectanglec6 {
+        fill: rgba(0,0,0,1);
+    }
+    .Rectangle6 {
+        position: absolute;
+        overflow: visible;
+        width: 60px;
+        height: 61px;
+        left: 0px;
+        top: 0px;
+    }
+    .Rectanglec7 {
+        fill: rgba(195,195,33,1);
+    }
+    .Rectangle7 {
+        position: absolute;
+        overflow: visible;
+        width: 22px;
+        height: 22px;
+        left: 19px;
+        top: 18px;
+    }
+    .img2{
+        z-index: -1;
+        width: 180%;
+        position: absolute;
+        bottom: -220%;
+        left: -40%;
+    }
+    .Content13{
+        position: absolute;
+        width: 627px;
+        height: 132px;
+        left: 369.5px;
+        top: 1791px;
+    }
+    .p2{
+        width: 628px;
+        height: 60px;
+        line-height: 60px;
+        margin-top: -9px;
+        text-align: center;
+        font-size: 62px;
+        color: rgba(0,0,0,1);
+        position: absolute;
+        left: 48%;
+        top: 280%;
+    }
+    .p3{
+        width: 828px;
+        height: 60px;
+        line-height: 40px;
+        margin-top: -9px;
+        text-align: center;
+        font-size: 32px;
+        color: rgba(0,0,0,1);
+        position: absolute;
+        left: 35%;
+        top: 440%;
+    }
     /* STYLES SPECIFIC TO FOOTER  */
     .footer {
         width: 100%;
@@ -39,6 +476,8 @@
         background-color: #ffffff;
         margin-left: auto;
         margin-right: auto;
+        position: absolute;
+        bottom: -250%
     }
     .footer .col {
         width: 290px;
@@ -98,6 +537,7 @@
         .contain {
             width: 1200px;
             margin: 0 auto;
+            float: bottom;
         }
     }
     @media only screen and (max-width: 1139px) {
@@ -140,7 +580,6 @@
         padding-bottom: 20px;
         padding-top: 20px;
         text-align: center;
-        font-family: Montserrat;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;

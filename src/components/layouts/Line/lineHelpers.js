@@ -1,6 +1,6 @@
 import { APIURL } from "../../../pages/api/apiConstants";
 
-const getLine = async ({ lineId }) => {
+const getLine = async (lineId) => {
   try {
     const response = await fetch(`${APIURL}/lines/find/${lineId}`, {
       method: "GET",

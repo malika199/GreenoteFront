@@ -32,7 +32,7 @@ export default function MainMenu() {
           </div>
 
           <div className={styles.icon_setting}>
-            <IoMdSettings />
+            <a href={'/profil'}> <IoMdSettings /> </a>
           </div>
         </div>
 

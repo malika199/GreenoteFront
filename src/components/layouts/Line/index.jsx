@@ -3,8 +3,9 @@ import styles from "./index.module.scss";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { getLine, updateLine } from "../Line/lineHelpers";
 import { v4 as uuidv4 } from "uuid";
+import { createLine } from "../Line/lineHelpers";
 
-const Index = ({ lineId }) => {
+const Index = ({ lineId, note, setNote }) => {
   const loadedLine = getLine(lineId);
   const [line, setLine] = useState(loadedLine || null);
 
@@ -24,7 +25,32 @@ const Index = ({ lineId }) => {
     if (e.code === "Space") {
       //create new element
       addLine();
+      // eslint-disable-next-line
+      console.log("## :", e);
+      e.keycode = 9;
+      // var keyboardEvent = document.createEvent("KeyboardEvent");
+      // var initMethod =
+      //   typeof keyboardEvent.initKeyboardEvent !== "undefined"
+      //     ? "initKeyboardEvent"
+      //     : "initKeyEvent";
+
+      // keyboardEvent[initMethod](
+      //   "keypress", // event type: keydown, keyup, keypress
+      //   true, // bubbles
+      //   true, // cancelable
+      //   window, // view: should be window
+      //   false, // ctrlKey
+      //   false, // altKey
+      //   false, // shiftKey
+      //   false, // metaKey
+      //   9, // keyCode: unsigned long - the virtual key code, else 0
+      //   0 // charCode: unsigned long - the Unicode character associated with the depressed key, else 0
+      // );
+      // document.dispatchEvent(keyboardEvent);
+
       //set focus on new element
+      // new KeyboardEvent("keydown", { key: "Tab" });
+      // new KeyboardEvent("keyup", { key: "Tab" });
     }
     if (e.key === "/") {
       setHasFocus(true);
