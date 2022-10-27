@@ -10,6 +10,8 @@ import TitlePage from "../../components/UI/Title/TitlePage";
 import LabelForm from "../../components/UI/labelForm/labelForm";
 import Link from "next/link";
 import styles from "./register.module.scss";
+import DropdowenMenu from  "../../components/dropdowenmenu/dropdowen"
+import Editor from "../../components/Editor";
 
 const Index = () => {
   const router = useRouter();
@@ -41,7 +43,8 @@ const Index = () => {
   return (
     <div>
       <form method="POST" onSubmit={(e) => handleSubmit(e)}>
-        <Logo />
+      <Editor />
+        
         <div>
           <label class={styles.label} > Already have an account ? </label>
 
@@ -73,6 +76,7 @@ const Index = () => {
           }}
         />
 
+
         <LabelForm> password </LabelForm>
         <Input
           type="password"
@@ -88,7 +92,8 @@ const Index = () => {
         {error && <span>{errorMessage}</span>}
         <ButtonSubmit value="Register"/>
 
-        <SubImage />
+        
+
       </form>
     </div>
   );
