@@ -1,19 +1,13 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import authService from "../../services/auth.service";
-import Message from '../../components/UI/Message/Message'
 import SubImage from "../../components/layouts/SubImage/SubImage";
 import ButtonSubmit from "../../components/UI/ButtonSubmit/ButtonSubmit";
 import Input from "../../components/UI/Input/Input";
 import LabelForm from "../../components/UI/labelForm/labelForm";
 import Link from "next/link";
 import styles from "./register.module.scss";
-<<<<<<< HEAD
-import DropdowenMenu from  "../../components/dropdowenmenu/dropdowen"
-import Editor from "../../components/Editor";
-=======
 import Logonoir from '../../components/header/Logonoir/Logonoir';
->>>>>>> 807de504848732ba77577ec70fc4de1bc5f59b8b
 
 const Index = () => {
   const router = useRouter();
@@ -44,18 +38,9 @@ const Index = () => {
 
   return (
     <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <form method="POST" onSubmit={(e) => handleSubmit(e)}>
-      <Editor />
-        
-=======
-      <Logo />
-=======
+      <SubImage />
       <Logonoir/>
->>>>>>> 807de504848732ba77577ec70fc4de1bc5f59b8b
       <form className={styles.label} method="POST" onSubmit={(e) => handleSubmit(e)}>
->>>>>>> origin/main
         <div>
           <label class={styles.label2} > Already have an account ? </label>
           <strong>  <Link href="/login"><a> Login </a></Link> </strong> 
@@ -101,9 +86,6 @@ const Index = () => {
         />
         {error && <span>{errorMessage}</span>}
         <ButtonSubmit value="Register"/>
-
-        
-
       </form>
     </div>
   );
