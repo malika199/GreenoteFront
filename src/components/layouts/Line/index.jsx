@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { getLine, updateLine } from "../Line/lineHelpers";
-import useInterval from "./useInterval";
 import { v4 as uuidv4 } from "uuid";
 
 const Index = ({ lineId }) => {
