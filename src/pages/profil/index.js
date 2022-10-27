@@ -67,7 +67,6 @@ const Index = () => {
               setUser({ ...user, email: e.target.value });
             }}
           />
-<<<<<<< HEAD
 
 <LabelForm> password </LabelForm>
           <Input
@@ -81,9 +80,7 @@ const Index = () => {
             }}
           />
                  <ButtonSubmit value="Edit"/>
-=======
                  <ButtonSubmit value="Enregistrer"/>
->>>>>>> origin/main
 
                 {success ? (
                     <Message type="success" message="votre profil a bien été modifié"/>
