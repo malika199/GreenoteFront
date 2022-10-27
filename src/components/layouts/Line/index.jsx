@@ -4,20 +4,31 @@ import { BsGrid3X3GapFill } from "react-icons/bs";
 import { getLine, updateLine } from "../Line/lineHelpers";
 import { v4 as uuidv4 } from "uuid";
 import { createLine } from "../Line/lineHelpers";
+import Editor from "../../Editor";
 
 const Index = ({ lineId, note, setNote }) => {
-  const loadedLine = getLine(lineId);
-  const [line, setLine] = useState(loadedLine || null);
+  const [line, setLine] = useState(null);
+
+  const [newLineId, setNewLineId] = useState(null);
 
   const [hasFocus, setHasFocus] = useState(false);
+
+  useEffect(() => {
+    setLine(getLine(lineId));
+    if (document) {
+      document?.getElementById(lineId)?.focus();
+      // eslint-disable-next-line
+      // console.log("## :", el);
+    }
+  }, []);
 
   // make width depend on content width
   // uuid for line
   // create line
   const addLine = () => {
-    const id = uuidv4();
-    createLine(id);
-    setNote({ ...note, lines: [...note?.lines, id] });
+    setNewLineId(uuidv4());
+    createLine(newLineId);
+    setNote({ ...note, lines: [...note?.lines, newLineId] });
   };
   const manageElement = (e) => {
     setHasFocus(false);
@@ -26,32 +37,40 @@ const Index = ({ lineId, note, setNote }) => {
       //create new element
       addLine();
       // eslint-disable-next-line
-      console.log("## :", e);
-      e.keycode = 9;
-      // var keyboardEvent = document.createEvent("KeyboardEvent");
-      // var initMethod =
-      //   typeof keyboardEvent.initKeyboardEvent !== "undefined"
-      //     ? "initKeyboardEvent"
-      //     : "initKeyEvent";
-
-      // keyboardEvent[initMethod](
-      //   "keypress", // event type: keydown, keyup, keypress
-      //   true, // bubbles
-      //   true, // cancelable
-      //   window, // view: should be window
-      //   false, // ctrlKey
-      //   false, // altKey
-      //   false, // shiftKey
-      //   false, // metaKey
-      //   9, // keyCode: unsigned long - the virtual key code, else 0
-      //   0 // charCode: unsigned long - the Unicode character associated with the depressed key, else 0
-      // );
-      // document.dispatchEvent(keyboardEvent);
-
-      //set focus on new element
-      // new KeyboardEvent("keydown", { key: "Tab" });
-      // new KeyboardEvent("keyup", { key: "Tab" });
+      // console.log("## :", e);
+      // if (document) {
+      //   const el = document.getElementById(newLineId);
+      //   // eslint-disable-next-line
+      //   console.log("## :", el);
+      // }
+      // document.getElementById(newLineId).focus();
     }
+
+    // e.keycode = 9;
+    // var keyboardEvent = document.createEvent("KeyboardEvent");
+    // var initMethod =
+    //   typeof keyboardEvent.initKeyboardEvent !== "undefined"
+    //     ? "initKeyboardEvent"
+    //     : "initKeyEvent";
+
+    // keyboardEvent[initMethod](
+    //   "keypress", // event type: keydown, keyup, keypress
+    //   true, // bubbles
+    //   true, // cancelable
+    //   window, // view: should be window
+    //   false, // ctrlKey
+    //   false, // altKey
+    //   false, // shiftKey
+    //   false, // metaKey
+    //   9, // keyCode: unsigned long - the virtual key code, else 0
+    //   0 // charCode: unsigned long - the Unicode character associated with the depressed key, else 0
+    // );
+    // document.dispatchEvent(keyboardEvent);
+
+    //set focus on new element
+    // new KeyboardEvent("keydown", { key: "Tab" });
+    // new KeyboardEvent("keyup", { key: "Tab" });
+
     if (e.key === "/") {
       setHasFocus(true);
     }
@@ -62,14 +81,17 @@ const Index = ({ lineId, note, setNote }) => {
     // updateLine(line);
   };
 
-  const onChangeElement = () => {};
+  const onChangeElement = (e) => {
+    // setLine({ ...line, text: e.target.value });
+  };
   return (
     <div className={styles.new}>
       <input
-        value={line.text}
-        id="input"
+        value={line?.text}
         type="text"
         size="1"
+        // id={lineId}
+        id={line}
         className={styles.text3}
         placeholder="Type..."
         role="textbox"
@@ -77,7 +99,7 @@ const Index = ({ lineId, note, setNote }) => {
         onKeyPress={(e) => manageElement(e)}
       />
       {/* if focus render icon */}
-      {hasFocus && <BsGrid3X3GapFill color="white" />}
+      {hasFocus && <Editor />}
     </div>
   );
 };
