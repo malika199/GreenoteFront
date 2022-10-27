@@ -1,7 +1,7 @@
 
 .form__group {
-    width: 86%;
-    height: 500px;
+    width: 75%;
+    height: 300px;
     background-image: url("/images/Homebackground.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,19 +14,18 @@
         height: 130%;
         margin-left: 60px;
         margin-right: 50px;
-        margin-top: 25px;
+        margin-top: 5rem;
         margin-bottom: 100px;
         padding: 50px;
+        width: 90%;
+        height: 400px;
         background-color: #000000;
         border-radius: 50px;
     }
     .btnnote{
-        height: 400px;
-        width: 300px;
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: 20px;
-        margin-bottom: 100px;
+        height: 60%;
+        width: 20%;
+      
         padding: 50px;
         background-color: #000000;
         border-radius: 50px;
@@ -39,7 +38,7 @@
     }
     .text{
         margin-left: 80px;
-        margin-top: 200px;
+        // margin-top: 200px;
     }
     .text2{
         font-weight: bolder;

@@ -29,7 +29,6 @@ const Index = () => {
           className={styles.btnnote}
           type={"button"}
           onClick={() => setIsNoteDisplayed(true)}
-          value={"Creer une note"}
         />
       </div>
       {isNoteDisplayed && (
