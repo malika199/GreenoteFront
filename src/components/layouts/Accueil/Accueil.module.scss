@@ -10,6 +10,8 @@
         color: #eaeaea;
         
     }
+
+
     .wrapper{
         height: 130%;
         margin-left: 60px;
@@ -28,13 +30,14 @@
       
         padding: 50px;
         background-color: #000000;
-        border-radius: 50px;
+        border-radius: 30px;
         color: #ddff00;
-        border: solid;
+        border-width:thick;
         background-image: url("/images/plus.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 50% 35%;
+        border-color: #ddff00;
     }
     .text{
         margin-left: 80px;
