@@ -9,7 +9,7 @@ function Index({ note, setNote }) {
   return (
     <div className={styles.container}>
       {lines.map((lineId, i) => (
-        <Line lineId={lineId} note={note} setNote={setNote} key={i} />
+        <Line lineId={lineId} note={note} setNote={setNote} key={i} index={i} />
       ))}
     </div>
   );

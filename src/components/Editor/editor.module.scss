@@ -3,26 +3,22 @@
     height: $size;
   }
   .newPost {
-    margin: 50px auto;
-    padding: 50px 40px;
-    width: 100%; 
+    position: absolute;
+    margin-left: 50px;
+    // padding: 50px 40px;
     max-width: 800px;
-    min-width: 480px;
-    background: #FFF;
+    min-width: 280px;
     font-family: 'Asap', sans-serif;
   
    
-    .body {
-        background: #E9F0F4;
-      }
-    
     
     .toolbar {
       background: #2E3641;
       
+      width: 100%;
       .button {
         float: left;
-        size:(45px);
+        size:(25px);
         background: #2E3641;
         border: none;
         border-right: 1px solid lighten(#2E3641, 10%);
@@ -51,20 +47,12 @@
           outline: none;
           font-weight: bold;
           cursor: pointer;
+          width: 120px;
           
           &:hover {
             background: lighten(#2E3641, 5%);
             color: darken(#C1CFD9, 5%);
           }
-        }
-        
-        &:after {
-          content: "\f0dc";
-          font-family: FontAwesome;
-          color: #C1CFD9;
-          position: absolute;
-          right: 10px;
-          top: 15px;
         }
       }
       
@@ -107,13 +95,12 @@
     
       .button {
         float: left;
-        width: 120px;
+        width: 55px;
         height: 45px;
         border: none;
         color: #FFF;
         text-transform: uppercase;
         outline: none;
-        margin-right: 20px;
         font-weight: bold;
         background: #C1CFD9;
         text-decoration: none; 
