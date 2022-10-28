@@ -4,8 +4,8 @@
   }
   .newPost {
     position: absolute;
-    margin: 50px auto;
-    padding: 50px 40px;
+    margin-left: 50px;
+    // padding: 50px 40px;
     max-width: 800px;
     min-width: 280px;
     font-family: 'Asap', sans-serif;
@@ -15,7 +15,7 @@
     .toolbar {
       background: #2E3641;
       
-      width: 110%;
+      width: 100%;
       .button {
         float: left;
         size:(25px);
@@ -53,15 +53,6 @@
             background: lighten(#2E3641, 5%);
             color: darken(#C1CFD9, 5%);
           }
-        }
-        
-        &:after {
-          content: "\f0dc";
-          font-family: FontAwesome;
-          color: #C1CFD9;
-          position: absolute;
-          right: 10px;
-          top: 15px;
         }
       }
       
