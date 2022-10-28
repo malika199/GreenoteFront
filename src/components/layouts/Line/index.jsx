@@ -8,6 +8,7 @@ import Editor from "../../Editor";
 
 const Index = ({ lineId, note, setNote, index }) => {
   const [line, setLine] = useState(null);
+  const [size, setSize] = useState(2);
 
   const [newLineId, setNewLineId] = useState(null);
 
@@ -48,16 +49,18 @@ const Index = ({ lineId, note, setNote, index }) => {
 
   const onChangeElement = (e) => {
     setLine({ ...line, text: e.target.value });
+    setSize(e.target.value.length * 0.99999999999)
+    console.log(size);
   };
   return (
     <div className={styles.new}>
       <input
         value={line?.text}
         type="text"
-        size="1"
+        size={size}
         id={index}
         className={styles.text3}
-        placeholder="Type..." 
+        placeholder="" 
         role="textarea"
         onChange={(e) => onChangeElement(e)}
         onKeyPress={(e) => manageElement(e)}
