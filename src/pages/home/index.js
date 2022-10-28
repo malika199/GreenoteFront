@@ -6,7 +6,9 @@ const Index = () => {
 	return (
 			<div>
 				<form>
+				
 					<Dashboard/>
+					
 				</form>
 			</div>
 	);
