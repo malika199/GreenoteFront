@@ -67,6 +67,19 @@ const Index = () => {
               setUser({ ...user, email: e.target.value });
             }}
           />
+
+<LabelForm> password </LabelForm>
+          <Input
+            label="Password"
+            type="text"
+            id="password"
+            name="password"
+            value={(user && user.password) || ""}
+            onChange={(e) => {
+              setUser({ ...user, password: e.target.value });
+            }}
+          />
+                 <ButtonSubmit value="Edit"/>
                  <ButtonSubmit value="Enregistrer"/>
 
                 {success ? (

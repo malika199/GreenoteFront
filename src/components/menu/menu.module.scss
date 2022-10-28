@@ -9,7 +9,7 @@
   height: 100vh;
   box-sizing: border-box;
   border: none;
-  width: 25%;
+  width: 20%;
   
   &::-webkit-scrollbar {
 		width: 10px;
@@ -29,28 +29,23 @@
   
 
 
-  .header_dash{
-    display: flex;
-    color:#fbfafb;
-   
+
     .icon_setting{
-      width: 41px;
-      // line-height: 60px;
+      margin: 10px;
       color: white;
     }
-  }
   
   .greennote_team {
     font-family: "Montserrat";
     font-size: 15px;
     font-weight: bold;
-    text-align: left;
+    float: left;
     color:#fbfafb;
 
     .span_G{
       vertical-align: 0.6em;
       margin: 10px;
-
+      float: right;
     }
   }
   
@@ -64,7 +59,7 @@
     background-color:   #383734;
     cursor: pointer;
     &:hover{
-      background-color: #5c5749;
+      background-color: rgba(206, 206, 21, 1);
     }
   }
   .Search {
@@ -73,6 +68,7 @@
     left: 0px;
     width: 24%;
     height: 37px;
+    font-size : 24px;
     -ms-border-radius: 18.5px;
     -o-border-radius: 18.5px;
     -moz-border-radius: 18.5px;
@@ -150,7 +146,18 @@
   .icones {
     margin: 10px;
   }
-
+  .acceuilbtn {
+    background: #cece15;
+    width: 89%;
+    height: 40px;
+    font-weight: bold;
+    text-align: -webkit-left;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    color: black;
+  
+  }
   .search_input {
     background: #cece15;
     color:black;
@@ -194,9 +201,10 @@
     width: 45px;
     text-align: center;
     line-height: 41px;
-    font-size: 20px;
+    font-size: 24px;
     color: black;
-    cursor: pointer;
+    cursor : pointer;
+
   }
   .input {
     opacity: 0;
@@ -215,6 +223,10 @@
     width: 100%;
     outline: none;
     line-height: 2.1;
+    font-family: montserrat;
+    font-weight: 600;
+    color: black;
+    font-size: 17px;
     padding: 0 10px 0 10px;
   }
 }

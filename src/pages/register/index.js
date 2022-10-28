@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import authService from "../../services/auth.service";
-import Message from '../../components/UI/Message/Message'
 import SubImage from "../../components/layouts/SubImage/SubImage";
 import ButtonSubmit from "../../components/UI/ButtonSubmit/ButtonSubmit";
 import Input from "../../components/UI/Input/Input";
@@ -39,6 +38,7 @@ const Index = () => {
 
   return (
     <div>
+      <SubImage />
       <Logonoir/>
       <form className={styles.label} method="POST" onSubmit={(e) => handleSubmit(e)}>
         <div>
@@ -71,6 +71,7 @@ const Index = () => {
           }}
         />
 
+
         <LabelForm> password </LabelForm>
         <Input
           type="password"
@@ -85,8 +86,6 @@ const Index = () => {
         />
         {error && <span>{errorMessage}</span>}
         <ButtonSubmit value="Register"/>
-
-        <SubImage />
       </form>
     </div>
   );

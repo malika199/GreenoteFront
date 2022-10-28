@@ -12,6 +12,7 @@ const getLine = async (lineId) => {
     return res;
   } catch (err) {
     console.log(err);
+    return null
   }
 };
 
@@ -27,6 +28,7 @@ const createLine = async (id) => {
     response.json();
   } catch (err) {
     console.log(err);
+    return null
   }
 };
 
@@ -41,6 +43,7 @@ const deleteLine = async (id) => {
     response.json();
   } catch (err) {
     console.log(err);
+    return null
   }
 };
 

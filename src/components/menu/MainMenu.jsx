@@ -8,6 +8,7 @@ import { BsPlusCircle } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { CgLogOut } from "react-icons/cg";
 import { IoMdSettings } from "react-icons/io";
+import { IoIosHome } from "react-icons/io";
 import Logoblanc from '../header/Logoblanc/Logoblanc';
 export default function MainMenu() {
   const [search, setSearch] = useState("");
@@ -26,17 +27,22 @@ export default function MainMenu() {
             <img
               alt="ek_image"
               src="/images/ellipse_7.png"
-              className={styles.ellipse_7}
             />
             <span className={styles.span_G}> GREENNOTE TEAM </span>
           </div>
 
           <div className={styles.icon_setting}>
-            <IoMdSettings />
+            <a href={'/profil'}> <IoMdSettings /> </a>
           </div>
         </div>
 
         <div className={styles.wrapper}>
+          <a href={'/acceuil'}>
+            <button value={'Acceuil'} className={styles.acceuilbtn}>
+              <IoIosHome/>
+              Acceuil
+            </button>
+          </a>
           <div className={styles.search_input}>
             <div className={styles.icon}>
               <BiSearch />
