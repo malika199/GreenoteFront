@@ -5,6 +5,7 @@ const Input = (props) => {
     return(
         <div className={styles.form__group}>
             <input
+                readOnly = {props.readOnly}
                 type={props.type}
                 name={props.name}
                 id={props.id}
