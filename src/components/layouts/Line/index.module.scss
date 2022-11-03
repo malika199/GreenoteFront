@@ -1,3 +1,4 @@
+
 .new {
     display: flex;
     height: 40px;
@@ -9,10 +10,13 @@
         width: 100%;
         max-width: 100%; 
         min-width:1px;
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
+        font-family: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        text-decoration: inherit;
+        text-align: inherit;
+        list-style: inherit;
+        font-size: inherit;
         line-height: 54px;
         /* identical to box height */
         color: rgba(255, 255, 255, 0.65);
@@ -24,5 +28,78 @@
     }
 }
 
+
+.bold{
+    font-weight: bold;
+}
+.italic{
+    font-style: italic;
+}
+.underline{
+    text-decoration: underline;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+.center{
+    text-align: center;
+}
+.breeSerif{
+    font-family: 'Bree Serif'
+}
+.georgia{
+    font-family: 'Georgia';
+}
+.palatinoLinotype{
+font-family: 'Palatino Linotype';
+}
+.timesNewRoman{
+    font-family: "Times New Roman", Times, serif;
+}
+.arial{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.arialBlack{
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+}
+.asap{
+    font-family: 'Asap';
+}
+.comicSansMs{
+    font-family: 'Comic Sans MS';
+}
+.impact{
+    font-family: 'Impact';
+}
+.lucidaSansUnicode{
+    font-family: "Lucida Sans Unicode";
+}
+.tahoma{
+    font-family: Tahoma;
+}
+.trebuchet MS{
+    font-family: "Trebuchet MS";
+}
+.verdana{
+    font-family: Verdana;
+}
+.courierNew{
+    font-family: "Courier New";
+}
+.lucidaConsole{
+    font-family: "Lucida Console";
+}
+.heading1{
+    font-size: larger;
+}
+.heading2{
+    font-size: medium;
+}
+.heading3{
+    font-size: small;
+}
 
     

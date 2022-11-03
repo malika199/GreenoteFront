@@ -4,80 +4,79 @@ import { BsGrid3X3GapFill } from "react-icons/bs";
 import { getLine, updateLine } from "../Line/lineHelpers";
 import { v4 as uuidv4 } from "uuid";
 import { createLine } from "../Line/lineHelpers";
+import Editor from "../../Editor";
 
-const Index = ({ lineId, note, setNote }) => {
-  const loadedLine = getLine(lineId);
-  const [line, setLine] = useState(loadedLine || null);
+const Index = ({ lineId, note, setNote, index }) => {
+  const [line, setLine] = useState(null);
+  const [size, setSize] = useState(2);
+
+  const [newLineId, setNewLineId] = useState(null);
 
   const [hasFocus, setHasFocus] = useState(false);
+
+  useEffect(() => {
+    setLine(getLine(lineId));
+  }, []);
 
   // make width depend on content width
   // uuid for line
   // create line
-  const addLine = () => {
-    const id = uuidv4();
-    createLine(id);
-    setNote({ ...note, lines: [...note?.lines, id] });
-  };
-  const manageElement = (e) => {
+  function addLine() {
+    setNewLineId(uuidv4());
+    createLine(newLineId);
+    setNote({ ...note, lines: [...note?.lines, newLineId] });
+  }
+
+  function manageElement(e) {
     setHasFocus(false);
 
     if (e.code === "Space") {
       //create new element
       addLine();
-      // eslint-disable-next-line
-      console.log("## :", e);
-      e.keycode = 9;
-      // var keyboardEvent = document.createEvent("KeyboardEvent");
-      // var initMethod =
-      //   typeof keyboardEvent.initKeyboardEvent !== "undefined"
-      //     ? "initKeyboardEvent"
-      //     : "initKeyEvent";
-
-      // keyboardEvent[initMethod](
-      //   "keypress", // event type: keydown, keyup, keypress
-      //   true, // bubbles
-      //   true, // cancelable
-      //   window, // view: should be window
-      //   false, // ctrlKey
-      //   false, // altKey
-      //   false, // shiftKey
-      //   false, // metaKey
-      //   9, // keyCode: unsigned long - the virtual key code, else 0
-      //   0 // charCode: unsigned long - the Unicode character associated with the depressed key, else 0
-      // );
-      // document.dispatchEvent(keyboardEvent);
-
-      //set focus on new element
-      // new KeyboardEvent("keydown", { key: "Tab" });
-      // new KeyboardEvent("keyup", { key: "Tab" });
+      // set focus on created element
+      setTimeout(() => {
+        const form = e.target.form;
+        const index = [...form].indexOf(e.target);
+        console.log(index);
+        form[index + 1].focus();
+        e.preventDefault();
+      }, 100);
     }
+
     if (e.key === "/") {
       setHasFocus(true);
     }
-    // eslint-disable-next-line
-    // console.log("## :", document.hasFocus());
-    // edit element
-    // setLine({ ...line, text: e.target.value });
-    // updateLine(line);
-  };
+  }
 
-  const onChangeElement = () => {};
+  function onChangeElement(e) {
+    setLine({ ...line, text: e.target.value });
+    setSize(e.target.value.length * 0.99999999999);
+  }
+
+  // concat all styles of each line
+  const stylesOfLine = line?.styles || [];
+  let className = "";
+  for (const style of stylesOfLine) {
+    className += styles?.[style] + "\n";
+  }
+
   return (
-    <div className={styles.new}>
-      <input
-        value={line.text}
-        id="input"
-        type="text"
-        size="1"
-        className={styles.text3}
-        placeholder="Type..."
-        role="textbox"
-        onChange={(e) => onChangeElement(e)}
-        onKeyPress={(e) => manageElement(e)}
-      />
-      {/* if focus render icon */}
-      {hasFocus && <BsGrid3X3GapFill color="white" />}
+    <div className={className}>
+      <div className={styles.new}>
+        <input
+          value={line?.text}
+          type="text"
+          size={size}
+          id={index}
+          className={styles.text3}
+          placeholder=""
+          role="textarea"
+          onChange={(e) => onChangeElement(e)}
+          onKeyPress={(e) => manageElement(e)}
+        />
+        {/* if focus render icon */}
+        {hasFocus && <Editor line={line} setLine={setLine} />}
+      </div>
     </div>
   );
 };
