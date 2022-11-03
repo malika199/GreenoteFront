@@ -30,6 +30,20 @@
           color: darken(#C1CFD9, 5%);
         }
       }
+      .buttonClicked {
+        float: left;
+        size:(25px);
+        background: #F97E76;
+        border: none;
+        border-right: 1px solid lighten(#2E3641, 10%);
+        color: #C1CFD9;
+        outline: none;
+        
+        &:hover {
+          background: lighten(#2E3641, 5%);
+          color: darken(#C1CFD9, 5%);
+        }
+      }
       .customSelect {
         float: right;
         position: relative;
@@ -105,15 +119,8 @@
         background: #C1CFD9;
         text-decoration: none; 
         
-        &:last-of-type {
-          margin-right: 0px;
-          background: #F97E76;
-          
-          &:hover {
-            background: lighten(#F97E76, 5%);
-          }
-        
-        
+      
+  
         &:active {
           box-shadow: inset 0px 4px rgba(0,0,0,0.05);
         }
@@ -122,19 +129,27 @@
           background: lighten(#C1CFD9, 5%);
         }
       }
+      .buttonClicked {
+        float: left;
+        width: 55px;
+        height: 45px;
+        border: none;
+        color: #FFF;
+        text-transform: uppercase;
+        outline: none;
+        font-weight: bold;
+        background: #a71515;
+        text-decoration: none; 
+        
       
-      &:after {
-        content: '';
-        display: block;
-        clear: both;
+  
+        &:active {
+          box-shadow: inset 0px 4px rgba(179, 23, 23, 0.05);
+        }
+        
+        &:hover {
+          background: lighten(#ba2a06d5, 5%);
+        }
       }
     }
-    
-    &:after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-    
-  }
- 
+  

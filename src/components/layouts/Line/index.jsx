@@ -21,18 +21,19 @@ const Index = ({ lineId, note, setNote, index }) => {
   // make width depend on content width
   // uuid for line
   // create line
-  const addLine = () => {
+  function addLine() {
     setNewLineId(uuidv4());
     createLine(newLineId);
     setNote({ ...note, lines: [...note?.lines, newLineId] });
-  };
-  const manageElement = (e) => {
+  }
+
+  function manageElement(e) {
     setHasFocus(false);
 
     if (e.code === "Space") {
       //create new element
       addLine();
-      // set focus on created element 
+      // set focus on created element
       setTimeout(() => {
         const form = e.target.form;
         const index = [...form].indexOf(e.target);
@@ -45,28 +46,37 @@ const Index = ({ lineId, note, setNote, index }) => {
     if (e.key === "/") {
       setHasFocus(true);
     }
-  };
+  }
 
-  const onChangeElement = (e) => {
+  function onChangeElement(e) {
     setLine({ ...line, text: e.target.value });
-    setSize(e.target.value.length * 0.99999999999)
-    console.log(size);
-  };
+    setSize(e.target.value.length * 0.99999999999);
+  }
+
+  // concat all styles of each line
+  const stylesOfLine = line?.styles || [];
+  let className = "";
+  for (const style of stylesOfLine) {
+    className += styles?.[style] + "\n";
+  }
+
   return (
-    <div className={styles.new}>
-      <input
-        value={line?.text}
-        type="text"
-        size={size}
-        id={index}
-        className={styles.text3}
-        placeholder="" 
-        role="textarea"
-        onChange={(e) => onChangeElement(e)}
-        onKeyPress={(e) => manageElement(e)}
-      />
-      {/* if focus render icon */}
-      {hasFocus && <Editor />}
+    <div className={className}>
+      <div className={styles.new}>
+        <input
+          value={line?.text}
+          type="text"
+          size={size}
+          id={index}
+          className={styles.text3}
+          placeholder=""
+          role="textarea"
+          onChange={(e) => onChangeElement(e)}
+          onKeyPress={(e) => manageElement(e)}
+        />
+        {/* if focus render icon */}
+        {hasFocus && <Editor line={line} setLine={setLine} />}
+      </div>
     </div>
   );
 };
