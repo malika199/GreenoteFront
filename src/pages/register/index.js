@@ -16,21 +16,35 @@ const Index = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [image, setImage] = useState(null);
-  const [createObjectURL, setCreateObjectURL] = useState(null);
+  const [selectImage, setSelectedFile] = useState();
+  const [isLoading, setisLoading] = useState(false);
 
-  const uploadToClient = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      const i = event.target.files[0];
-      setImage(i);
-      setCreateObjectURL(URL.createObjectURL(i));
-    }
+  const handleChange = (event) => {
+    setSelectedFile(event.target.files[0]);
   };
+  console.log(selectImage);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const data = new FormData();
+    data.append("file", selectImage);
+    data.append("upload_preset", "ymp6ekgg");
+    data.append("cloud_name", "doieuxngb");
+    setisLoading(true);
+    fetch("https://api.cloudinary.com/v1_1/doieuxngb/image/upload", {
+      method: "POST",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((data) => handleSubmitSend(data.secure_url))
+      .catch((err) => console.log(err));
+  };
+
+  const handleSubmitSend = (url) => {
+
     authService
-      .register(user)
+      .register({...user, profilPecture: url})
       .then((data) => {
         console.log(data);
         if (data.message) {
@@ -52,6 +66,7 @@ const Index = () => {
   return (
     <div>
       <Logonoir />
+
       <form
         className={styles.label}
         method="POST"
@@ -69,16 +84,15 @@ const Index = () => {
           <br />
         </div>
 
-        <img src={createObjectURL} />
-        <h4>Select Image</h4>
-        <input
-          type="file"
-          onChange={(e) => {
-            uploadToClient;
-            setUser({ ...user, profilPecture: e.target.value });
-          }}
-          name="myImage"
-        />
+        <div className={style.label}>
+          <p>
+            <input
+              type="file"
+              onChange={handleChange}
+              accept=".jpg, .png, jpeg"
+            />
+          </p>
+        </div>
 
         <div className={style.label}>
           {" "}
@@ -127,11 +141,9 @@ const Index = () => {
         />
         {error && <span>{errorMessage}</span>}
         <ButtonSubmit value="Register" />
-
-      </form> 
+      </form>
       <SubImage />
-    </div>   
-
+    </div>
   );
 };
 

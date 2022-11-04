@@ -14,14 +14,47 @@ const Index = () => {
   const [isReadonly, setIsReadonly] = useState(true);
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+
+
+  const [selectImage, setSelectedFile] = useState();
+  const [isLoading, setisLoading] = useState(false);
+
+  const handleChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+  console.log(selectImage);
+
+  const handleSubmitImage = (e) => {
+    if (selectImage) {
+        e.preventDefault();
+    const data = new FormData();
+    data.append("file", selectImage);
+    data.append("upload_preset", "ymp6ekgg");
+    data.append("cloud_name", "doieuxngb");
+    setisLoading(true);
+    fetch("https://api.cloudinary.com/v1_1/doieuxngb/image/upload", {
+      method: "POST",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((data) => handleSubmit(data.secure_url))
+      .catch((err) => console.log(err));
+    }else{
+      handleSubmit()
+    }
+  
+  };
+
+
+
+  const handleSubmit = (url) => {
     if (isReadonly) {
       setIsReadonly(!isReadonly);
     } else {
-      e.preventDefault();
+      // e.preventDefault();
       const token = localStorage.getItem("token");
       authService
-        .updateUser(token, user)
+        .updateUser(token, {...user, profilPecture: url})
         .then((data) => {
           console.log(data);
           setSuccess(true);
@@ -68,7 +101,14 @@ const Index = () => {
         {/* <div className={styles.container }> */}
         <div className={isReadonly ? styles.container : styles.wrapper}>
           <div className={styles.col4}>
-            <img className={styles.col4} src="images/photo_de_profil.jpg" />
+            <img className={styles.col4} src= {(user && user.profilPecture) || ""} />
+            {isReadonly === false ? (
+              <input type="file"  
+              onChange={handleChange}
+              accept=".jpg, .png, jpeg" ></input>
+
+             ):<></>}
+
           </div>
           <div className={styles.col6}>
             <div className={styles.container}>
@@ -140,7 +180,7 @@ const Index = () => {
                 <input
                   type="button"
                   value=" modifer mon profile"
-                  onClick={(e) => handleSubmit(e)}
+                  onClick={(e) => handleSubmitImage(e)}
                 />
               </div>
               {isReadonly === false ? (
@@ -149,9 +189,7 @@ const Index = () => {
                 <input
                   type="reset"
                   value="annuler"
-                   onClick={(e) => handleSubmit(e)
                  
-                  }
                 />
               </div>
               ):<></> }

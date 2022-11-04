@@ -7,7 +7,7 @@ export default {
             headers: {
               "content-type": "application/json",
             },
-            body: JSON.stringify(user),
+            body: user,
           }).then((res) => res.json())
         }
     }
