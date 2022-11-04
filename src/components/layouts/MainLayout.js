@@ -3,7 +3,7 @@ import styles from "./MainLayout.module.scss";
 const Mainlayout = ({children}) => {
     return (
         <>
-            <header className={styles.header__main}>
+            <header>
             </header>
             
             <main>

@@ -33,14 +33,16 @@ export default {
  
  
   updateUser(token, user) {
-      return fetch(`${APIURL}/${user._id}`, {
+    console.log(user)
+      return fetch(`${APIURL}/users/${user._id}`, {
           method: "PUT",
           headers: {
               "authorization": token,
               "content-type":"application/json",
               "Access-Control-Allow-Origin": "*"
           },
-          body: (user),
+          body: JSON.stringify(user),
+        
       })
       .then(res => res.json())
   },

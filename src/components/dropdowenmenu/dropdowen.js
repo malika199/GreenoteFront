@@ -29,7 +29,7 @@ function DropdowenMenu() {
   });
 
   return (
-    <div className={style.scroller}>
+    // <div className={style.scroller}>
     <div className={style.dropdownmenu}>
       <div className={style.menucontainer} ref={menuRef}>
         <div className={style.menutrigger} onClick={()=>{setOpen(!open)}}>
@@ -75,7 +75,7 @@ function DropdowenMenu() {
         }
       </div>
     </div>
-    </div>
+    // </div>
   );
 }
 
