@@ -7,9 +7,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 1;
+    
     
     .img1{
-        z-index: -1;
+        z-index: 0;
         width: 65%;
         position: absolute;
         right: -40px;
@@ -619,6 +621,7 @@
     
     header nav {
         padding: 1rem 1rem;
+        z-index: 1;
     }
     
     nav ul li {
