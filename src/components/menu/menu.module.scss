@@ -148,7 +148,7 @@
   }
   .acceuilbtn {
     background: #cece15;
-    width: 89%;
+    width: 95%;
     height: 40px;
     font-weight: bold;
     text-align: -webkit-left;
@@ -165,13 +165,15 @@
     border-radius: 20px;
     position: relative;
     box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+    margin-bottom: 10px;
   }
   .autocom_box {
     padding: 0;
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
     max-height: 280px;
     overflow-y: auto;
+    color: black;
   }
   .icon {
     position: absolute;

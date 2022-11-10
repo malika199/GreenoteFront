@@ -33,7 +33,7 @@ const Index = () => {
         }
 
         localStorage.setItem("token", data.token);
-        router.push("/acceuil");
+        router.push("/abonnement");
       })
       .catch((err) => {
         console.log(err);

@@ -54,7 +54,7 @@ const Index = () => {
         }
         console.log("c est un nouveau user ", data);
 
-        router.push("/acceuil");
+        router.push("/login");
       })
       .catch((err) => {
         console.log(err);
