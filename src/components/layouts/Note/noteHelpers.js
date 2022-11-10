@@ -1,5 +1,20 @@
 import { APIURL } from "../../../pages/api/apiConstants";
 
+const getNotes = async () => {
+  try {
+    const response = await fetch(`${APIURL}/notes`, {
+      method: "GET",
+      headers: {
+        authorization: localStorage.getItem("token"),
+      },
+    });
+    const res = await response.json();
+    return res
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const createNote = async (id) => {
   try {
     const response = await fetch(`${APIURL}/notes`, {
@@ -9,7 +24,7 @@ const createNote = async (id) => {
       },
       body: { _id: id },
     });
-    response.json();
+    await response.json();
   } catch (err) {
     console.log(err);
   }
@@ -23,7 +38,7 @@ const deleteNote = async (id) => {
         authorization: localStorage.getItem("token"),
       },
     });
-    response.json();
+    await response.json();
   } catch (err) {
     console.log(err);
   }
@@ -44,4 +59,4 @@ const updateNote = async (Note) => {
   }
 };
 
-export { createNote, updateNote, deleteNote };
+export { createNote, updateNote, deleteNote, getNotes };

@@ -10,6 +10,8 @@ export default function Editor({ line, setLine }) {
   const styles = line?.styles || [];
 
   function onEditStyle(style) {
+    // eslint-disable-next-line
+    console.log('## style:', style)
     if (styles.includes(style)) {
       const otherStyles = styles.filter((s) => s !== style);
       setLine({ ...line, styles: otherStyles });
@@ -116,7 +118,7 @@ export default function Editor({ line, setLine }) {
         <div className={style.customSelect}>
           <select
             className={style.select}
-            onClick={(e) => onEditStyle(e.target.value)}
+            onChange={(e) => onEditStyle(e.target.value)}
           >
             <option value="heading1">Heading 1</option>
             <option value="heading2">Heading 2</option>

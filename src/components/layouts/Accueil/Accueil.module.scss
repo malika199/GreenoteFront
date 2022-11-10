@@ -16,8 +16,8 @@
         height: 130%;
         margin-left: 60px;
         margin-right: 50px;
-        margin-top: 25px;
-        margin-bottom: 100px;
+        margin-top: 15px;
+        margin-bottom: 10px;
         padding: 50px;
         background-color: #000000;
         border-radius: 50px;
@@ -33,11 +33,23 @@
         background-color: #000000;
         border-radius: 30px;
         color: #ddff00;
-        border-width:thick;
         background-image: url("/images/plus.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 50% 35%;
+        border-color: #ddff00;
+    }
+    .textnote{
+        height: 250px;
+        width: 200px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        padding: 50px;
+        background-color: #000000;
+        border-radius: 30px;
+        color: #e2e2e2;
         border-color: #ddff00;
     }
     .text{
