@@ -1,239 +1,254 @@
-.menu{
+.menu {
   max-height: 100%;
   overflow-y: visible;
 
-.Rectangle {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 1);
-  overflow-y: scroll;
-  height: 100vh;
-  box-sizing: border-box;
-  border: none;
-  width: 20%;
-  
-  &::-webkit-scrollbar {
-		width: 10px;
-	}
-	&::-webkit-scrollbar:horizontal {
-		height: 10px;
-	}
-	&::-webkit-scrollbar-track {
-		background-color: transparentize(#ccc, 0.7);
-	}
-	&::-webkit-scrollbar-thumb {
-		border-radius: 10px;
-		background: transparentize(#ccc, 0.5);
-		box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-	}
+  $circleSize: 40px;
+  $radius: 100px;
+  $shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+  $fontColor: rgb(250, 250, 250);
 
-  
-
-
-
-    .icon_setting{
-      margin: 10px;
-      color: white;
-    }
-  
-  .greennote_team {
-    font-family: "Montserrat";
-    font-size: 15px;
-    font-weight: bold;
-    float: left;
-    color:#fbfafb;
-
-    .span_G{
-      vertical-align: 0.6em;
-      margin: 10px;
-      float: right;
-    }
-  }
-  
-  .logout {
-    color: white;
-    line-height: 3;
-    display: block;
-    margin: 20px 10px;
-    padding: 0px 10px;
-
-    background-color:   #383734;
-    cursor: pointer;
-    &:hover{
-      background-color: rgba(206, 206, 21, 1);
-    }
-  }
-  .Search {
-    opacity: 0.5;
-    margin-top: 5px;
-    left: 0px;
-    width: 24%;
-    height: 37px;
-    font-size : 24px;
-    -ms-border-radius: 18.5px;
-    -o-border-radius: 18.5px;
-    -moz-border-radius: 18.5px;
-    -webkit-border-radius: 18.5px;
-    border-radius: 18.5px;
-    background: #958616;
-  }
-
-  .add {
-    top: 0px;
-    left: 0px;
-    height: 38px;
-    width: 94%;
-    margin: 7px 0px;
-    display: flex;
-    // -ms-border-radius: 18.5px;
-    // -o-border-radius: 18.5px;
-    // -moz-border-radius: 18.5px;
-    // -webkit-border-radius: 18.5px;
-    border-radius: 18.5px;
-    background: rgba(206, 206, 21, 255);
-  }
-
-  .rectangle_principale {
-    // opacity: 0.5;
-    display: flex;
-    justify-content: space-between;
-    height: 2.4rem;
-    padding: 7px; 
-    margin: 10px;
-    color: rgb(208, 208, 208);
-    cursor: pointer;
-    &:hover{
-      color: white;
-      background-color: #383734;
-    }
-  }
-
-  .rectangle_secondaire {
-    // opacity: 0.5;
-    display: flex;
-    justify-content: space-between;
-    height: 2.4rem;
-    padding: 7px; 
-    margin: 5px 10px 5px 30px;
-    color: rgb(208, 208, 208);
-    cursor: pointer;
-    &:hover{
-      color: white;
-      background-color: #383734;
-    }
-  }
-
-  .rectangle_header{
-    // opacity: 0.5;
-    margin: 0px 10px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0px;
-    color: rgb(208, 208, 208);
-   
-  }
-  .Title {
-    overflow: visible;
-    // width: 92px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 1);
-    text-transform: capitalize;
-  }
-  .icones {
-    margin: 10px;
-  }
-  .acceuilbtn {
-    background: #cece15;
-    width: 89%;
-    height: 40px;
-    font-weight: bold;
-    text-align: -webkit-left;
-    font-size: 16px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    color: black;
-  
-  }
-  .search_input {
-    background: #cece15;
-    color:black;
-    width: 95%;
-    border-radius: 20px;
-    position: relative;
-    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
-  }
-  .autocom_box {
-    padding: 0;
-    opacity: 0;
-    pointer-events: none;
-    max-height: 280px;
-    overflow-y: auto;
-  }
-  .icon {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    stroke-width: "2" !important; 
-    // height: 41px;
-    width: 37px;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    color: black;
-    cursor: pointer;
-  }
-  
-
-  .icon_setting{
-    margin-top: 6px;
-    margin-right: 10px;
-    color: white;
-    font-size: 23px;
-  }
-
-  .icon_add {
-    top: 0px;
-    // height: 41px;
-    width: 45px;
-    text-align: center;
-    line-height: 41px;
-    font-size: 24px;
-    color: black;
-    cursor : pointer;
-
-  }
-  .input {
-    opacity: 0;
-    fill: rgba(206, 206, 21, 1);
-    height: 38px;
-    width: 82%;
-    outline: none;
+  .Rectangle {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 1);
+    overflow-y: scroll;
+    height: 100vh;
+    box-sizing: border-box;
     border: none;
-    border-radius: 30px 0px 0px 30px;
-    padding: 0 20px 0 20px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  }
+    width: 20%;
 
-  .new {
-    height: 41px;
-    width: 100%;
-    outline: none;
-    line-height: 2.1;
-    font-family: montserrat;
-    font-weight: 600;
-    color: black;
-    font-size: 17px;
-    padding: 0 10px 0 10px;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar:horizontal {
+      height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparentize(#ccc, 0.7);
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: transparentize(#ccc, 0.5);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .img {
+      // position: absolute;
+      object-fit: cover;
+      width: $circleSize;
+      height: $circleSize;
+      box-shadow: $shadow;
+      border-radius: $radius;
+      z-index: 0;
+    }
+    .c_avatar {
+      position: relative;
+      display: inline-block;
+      .c_avatar_status {
+        width: 15px;
+        height: 15px;
+        background: #99cc00;
+        border: 2px solid white;
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        border-radius: 100%;
+      }
+    }
+
+    .icon_setting {
+      margin: 10px;
+      color: white;
+    }
+
+    .greennote_team {
+      font-family: "Montserrat";
+      font-size: 15px;
+      font-weight: bold;
+      float: left;
+      color: #fbfafb;
+
+      .span_G {
+        vertical-align: 0.6em;
+        margin: 10px;
+        float: right;
+      }
+    }
+
+    .logout {
+      color: white;
+      line-height: 3;
+      display: block;
+      margin: 20px 10px;
+      padding: 0px 10px;
+
+      background-color: #383734;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(206, 206, 21, 1);
+      }
+    }
+    .Search {
+      opacity: 0.5;
+      margin-top: 5px;
+      left: 0px;
+      width: 24%;
+      height: 37px;
+      font-size: 24px;
+      -ms-border-radius: 18.5px;
+      -o-border-radius: 18.5px;
+      -moz-border-radius: 18.5px;
+      -webkit-border-radius: 18.5px;
+      border-radius: 18.5px;
+      background: #958616;
+    }
+
+    .add {
+      top: 0px;
+      left: 0px;
+      height: 38px;
+      width: 94%;
+      margin: 7px 0px;
+      display: flex;
+      // -ms-border-radius: 18.5px;
+      // -o-border-radius: 18.5px;
+      // -moz-border-radius: 18.5px;
+      // -webkit-border-radius: 18.5px;
+      border-radius: 18.5px;
+      background: rgba(206, 206, 21, 255);
+    }
+
+    .rectangle_principale {
+      // opacity: 0.5;
+      display: flex;
+      justify-content: space-between;
+      height: 2.4rem;
+      padding: 7px;
+      margin: 10px;
+      color: rgb(208, 208, 208);
+      cursor: pointer;
+      &:hover {
+        color: white;
+        background-color: #383734;
+      }
+    }
+
+    .rectangle_secondaire {
+      // opacity: 0.5;
+      display: flex;
+      justify-content: space-between;
+      height: 2.4rem;
+      padding: 7px;
+      margin: 5px 10px 5px 30px;
+      color: rgb(208, 208, 208);
+      cursor: pointer;
+      &:hover {
+        color: white;
+        background-color: #383734;
+      }
+    }
+
+    .rectangle_header {
+      // opacity: 0.5;
+      margin: 0px 10px;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0px;
+      color: rgb(208, 208, 208);
+    }
+    .Title {
+      overflow: visible;
+      // width: 92px;
+      white-space: nowrap;
+      text-align: left;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 1);
+      text-transform: capitalize;
+    }
+    .icones {
+      margin: 10px;
+    }
+    .acceuilbtn {
+      background: #cece15;
+      width: 89%;
+      height: 40px;
+      font-weight: bold;
+      text-align: -webkit-left;
+      font-size: 16px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      color: black;
+    }
+    .search_input {
+      background: #cece15;
+      color: black;
+      width: 95%;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+    }
+    .autocom_box {
+      padding: 0;
+      opacity: 0;
+      pointer-events: none;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .icon {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      stroke-width: "2" !important;
+      // height: 41px;
+      width: 37px;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      color: black;
+      cursor: pointer;
+    }
+
+    .icon_setting {
+      margin-top: 6px;
+      margin-right: 10px;
+      color: white;
+      font-size: 23px;
+    }
+
+    .icon_add {
+      top: 0px;
+      // height: 41px;
+      width: 45px;
+      text-align: center;
+      line-height: 41px;
+      font-size: 24px;
+      color: black;
+      cursor: pointer;
+    }
+    .input {
+      opacity: 0;
+      fill: rgba(206, 206, 21, 1);
+      height: 38px;
+      width: 82%;
+      outline: none;
+      border: none;
+      border-radius: 30px 0px 0px 30px;
+      padding: 0 20px 0 20px;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .new {
+      height: 41px;
+      width: 100%;
+      outline: none;
+      line-height: 2.1;
+      font-family: montserrat;
+      font-weight: 600;
+      color: black;
+      font-size: 17px;
+      padding: 0 10px 0 10px;
+    }
   }
 }
-
-
-
-
-
-}
-

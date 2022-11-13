@@ -9,12 +9,12 @@ import styles from "./profil.module.scss";
 import jwt from "jwt-decode";
 import MainMenu from "../../components/menu/MainMenu";
 import authService from "../../services/auth.service";
+import { AiFillCamera } from "react-icons/ai";
+
 const Index = () => {
   const [user, setUser] = useState({});
   const [isReadonly, setIsReadonly] = useState(true);
   const [success, setSuccess] = useState(false);
-
-
 
   const [selectImage, setSelectedFile] = useState();
   const [isLoading, setisLoading] = useState(false);
@@ -26,26 +26,23 @@ const Index = () => {
 
   const handleSubmitImage = (e) => {
     if (selectImage) {
-        e.preventDefault();
-    const data = new FormData();
-    data.append("file", selectImage);
-    data.append("upload_preset", "ymp6ekgg");
-    data.append("cloud_name", "doieuxngb");
-    setisLoading(true);
-    fetch("https://api.cloudinary.com/v1_1/doieuxngb/image/upload", {
-      method: "POST",
-      body: data,
-    })
-      .then((res) => res.json())
-      .then((data) => handleSubmit(data.secure_url))
-      .catch((err) => console.log(err));
-    }else{
-      handleSubmit()
+      e.preventDefault();
+      const data = new FormData();
+      data.append("file", selectImage);
+      data.append("upload_preset", "ymp6ekgg");
+      data.append("cloud_name", "doieuxngb");
+      setisLoading(true);
+      fetch("https://api.cloudinary.com/v1_1/doieuxngb/image/upload", {
+        method: "POST",
+        body: data,
+      })
+        .then((res) => res.json())
+        .then((data) => handleSubmit(data.secure_url))
+        .catch((err) => console.log(err));
+    } else {
+      handleSubmit();
     }
-  
   };
-
-
 
   const handleSubmit = (url) => {
     if (isReadonly) {
@@ -54,7 +51,7 @@ const Index = () => {
       // e.preventDefault();
       const token = localStorage.getItem("token");
       authService
-        .updateUser(token, {...user, profilPecture: url})
+        .updateUser(token, { ...user, profilPecture: url })
         .then((data) => {
           console.log(data);
           setSuccess(true);
@@ -82,9 +79,7 @@ const Index = () => {
     authService
       .getUser(token, userId)
       .then((data) => {
-        
         setUser(data);
-
       })
       .catch((err) => console.log(err));
   }, []);
@@ -93,24 +88,43 @@ const Index = () => {
     <>
       <MainMenu />
 
-      <div>
-        <h1> Edit account </h1>
-      </div>
+      <div className={styles.cnt}>
+        <div className={isReadonly ? styles.profil : styles.wrapper}>
+          <h1> Edit account </h1>
+          <div className={styles.cnt}>
+            <div className={styles.profile_pic}>
+              {isReadonly === false ? (
+                <>
+                  <label class={styles.l_label} for="file">
+                    <span className={styles.span}>
+                      {" "}
+                      <i className={styles.icon}>
+                        <AiFillCamera />
+                      </i>{" "}
+                      {"  "} Change Image
+                    </span>
+                  </label>
 
-      <div className={styles.profil}>
-        {/* <div className={styles.container }> */}
-        <div className={isReadonly ? styles.container : styles.wrapper}>
-          <div className={styles.col4}>
-            <img className={styles.col4} src= {(user && user.profilPecture) || ""} />
-            {isReadonly === false ? (
-              <input type="file"  
-              onChange={handleChange}
-              accept=".jpg, .png, jpeg" ></input>
+                  <input
+                    className={styles.input}
+                    id="file"
+                    type="file"
+                    onChange={handleChange}
+                    accept=".jpg, .png, jpeg"
+                  ></input>
+                </>
+              ) : (
+                <></>
+              )}
+              <img
+                className={isReadonly ? styles.img1 : styles.img}
+                src={(user && user.profilPecture) || ""}
+              />
+            </div>
 
-             ):<></>}
-
+            <div className={styles.col6}></div>
           </div>
-          <div className={styles.col6}>
+          <div className={styles.cnt}>
             <div className={styles.container}>
               <div className={styles.col4}>
                 <LabelForm> username </LabelForm>
@@ -178,21 +192,23 @@ const Index = () => {
             <div className={styles.container}>
               <div className={styles.col4}>
                 <input
+                  className={styles.buttonSubmit}
                   type="button"
-                  value=" modifer mon profile"
+                  value="modifer mon profile"
                   onClick={(e) => handleSubmitImage(e)}
                 />
               </div>
               {isReadonly === false ? (
-
-              <div className={styles.col4}>
-                <input
-                  type="reset"
-                  value="annuler"
-                 
-                />
-              </div>
-              ):<></> }
+                <div className={styles.col4}>
+                  <input
+                    className={styles.buttonReset}
+                    type="reset"
+                    value="annuler"
+                  />
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
           {success ? (

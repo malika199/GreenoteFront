@@ -73,7 +73,7 @@ const Index = () => {
             setUser({ ...user, password: e.target.value });
           }}
         />
-        <ButtonSubmit value="Login" />
+        <ButtonSubmit type="submit" value="Login" />
         {error ? <Message message={errorMessage} type="error" /> : ""}
         <br />
         <br />

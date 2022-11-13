@@ -5,7 +5,7 @@ import styles from "./ButtonSubmit.module.scss"
 const ButtonSubmit = (props) => {
     return(
         <input className={styles.ButtonSubmit}
-        type="submit"
+        type={props.type}
         value={props.value}
         
         />
