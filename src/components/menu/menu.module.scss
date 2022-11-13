@@ -73,6 +73,73 @@
         float: right;
       }
     }
+  .rectangle_header{
+    // opacity: 0.5;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    color: rgb(208, 208, 208);
+   
+  }
+  .Title {
+    overflow: visible;
+    // width: 92px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 1);
+    text-transform: capitalize;
+  }
+  .icones {
+    margin: 10px;
+  }
+  .acceuilbtn {
+    background: #cece15;
+    width: 95%;
+    height: 40px;
+    font-weight: bold;
+    text-align: -webkit-left;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    color: black;
+  
+  }
+  .search_input {
+    background: #cece15;
+    color:black;
+    width: 95%;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+    margin-bottom: 10px;
+  }
+  .autocom_box {
+    padding: 0;
+    opacity: 1;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+    color: black;
+  }
+  .icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    stroke-width: "2" !important; 
+    // height: 41px;
+    width: 37px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+  }
+  
 
     .logout {
       color: white;
