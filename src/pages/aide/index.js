@@ -35,55 +35,19 @@ const Index = () => {
           font-size:20px;
         }`}
         </style>
-          <div className="single-contact-info" >  
+          <div className={styles.Accordion}  >  
               <Accordion />
+             
+          
+
               
           </div>
                
           </div>
         </div>
-              <div className="col-lg-8 col-md-7">
-                <div className="contact-form">
-                  <div className="contact-title mb-30">
-                    <h2>Get In Touch</h2>
-                    <style jsx>
-        {`
-        .contact-title mb-30 {
-          text-align: center;
-          font-size:20px;
-        }`}
-        </style>
-                  </div>
-                  <form className="contact-form-style">
-                    <div className="row">
-                      <div className="col-lg-6">
-                        <input name="name" placeholder="Name*" type="text" />
-                      </div>
-                      <div className="col-lg-6">
-                        <input name="email" placeholder="Email*" type="email" />
-                      </div>
-                      <div className="col-lg-12">
-                        <input
-                          name="subject"
-                          placeholder="Subject*"
-                          type="text"
-                        />
-                      </div>
-                      <div className="col-lg-12">
-                        <textarea
-                          name="message"
-                          placeholder="Your Message*"
-                          defaultValue={""}
-                        />
-                        <button className="button button1" type="submit">
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                  <p className="form-messege" />
-                </div>
-            
-        </div>
+        <br>
+        </br>      
+                
         <footer className={styles.footer}>
             <div className={styles.contain}>
                 <div className={styles.col}>
