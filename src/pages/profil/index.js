@@ -95,7 +95,7 @@ const Index = () => {
             <div className={styles.profile_pic}>
               {isReadonly === false ? (
                 <>
-                  <label class={styles.l_label} for="file">
+                  <label className={styles.l_label} for="file">
                     <span className={styles.span}>
                       {" "}
                       <i className={styles.icon}>
@@ -190,7 +190,7 @@ const Index = () => {
             )}
 
             <div className={styles.container}>
-              <div className={styles.col4}>
+              <div className={styles.colB}>
                 <input
                   className={styles.buttonSubmit}
                   type="button"
@@ -201,6 +201,7 @@ const Index = () => {
               {isReadonly === false ? (
                 <div className={styles.col4}>
                   <input
+                    onClick={(e) => setIsReadonly(!isReadonly)}
                     className={styles.buttonReset}
                     type="reset"
                     value="annuler"

@@ -52,7 +52,7 @@ export default function MainMenu() {
                 className={styles.img}
                 src={(user && user.profilPecture) || ""}
               />
-              <span class={styles.c_avatar_status}></span>
+              <span className={styles.c_avatar_status}></span>
             </div>
             <span className={styles.span_G}> {user.username} </span>
           </div>
@@ -93,6 +93,8 @@ export default function MainMenu() {
           </div>
           <div className={styles.new}> New</div>
         </div>
+
+        <div className={styles.elll}>
         <ElementsContainer path="root" search={search} />
         <Element
           element={{
@@ -109,6 +111,9 @@ export default function MainMenu() {
             title: "Bin",
           }}
         />
+       
+       </div>
+
         <div className={styles.logout} onClick={() => logout()}>
           <i>
             <CgLogOut />{" "}

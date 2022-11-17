@@ -74,7 +74,7 @@ const Index = () => {
         onSubmit={(e) => handleSubmit(e)}
       >
         <div>
-          <label class={styles.label2}> Already have an account ? </label>
+          <label className={styles.label2}> Already have an account ? </label>
           <strong>
             {" "}
             <Link href="/login">
@@ -87,7 +87,7 @@ const Index = () => {
 
         <div className={style.label}>
           <div className={styles.profile_pic}>
-            <label class={styles.l_label} for="file">
+            <label className={styles.l_label} for="file">
               <span className={styles.span}>
                 {" "}
                 <i className={styles.icon}>
