@@ -16,7 +16,7 @@ const Index = () => {
     const userId = decodedToken.id;
     const notesFromServ = getNotes();
     if (notesFromServ) {
-     // setNotes(notesFromServ);
+      // setNotes(notesFromServ);
     }
 
     authService

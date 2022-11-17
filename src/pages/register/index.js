@@ -11,6 +11,8 @@ import Link from "next/link";
 import styles from "./register.module.scss";
 import Logonoir from "../../components/header/Logonoir/Logonoir";
 import style from "../../../styles/Home.module.css";
+import { AiFillCamera } from "react-icons/ai";
+
 const Index = () => {
   const router = useRouter();
   const [user, setUser] = useState({});
@@ -42,9 +44,8 @@ const Index = () => {
   };
 
   const handleSubmitSend = (url) => {
-
     authService
-      .register({...user, profilPecture: url})
+      .register({ ...user, profilPecture: url })
       .then((data) => {
         console.log(data);
         if (data.message) {
@@ -73,7 +74,7 @@ const Index = () => {
         onSubmit={(e) => handleSubmit(e)}
       >
         <div>
-          <label class={styles.label2}> Already have an account ? </label>
+          <label className={styles.label2}> Already have an account ? </label>
           <strong>
             {" "}
             <Link href="/login">
@@ -85,13 +86,25 @@ const Index = () => {
         </div>
 
         <div className={style.label}>
-          <p>
+          <div className={styles.profile_pic}>
+            <label className={styles.l_label} for="file">
+              <span className={styles.span}>
+                {" "}
+                <i className={styles.icon}>
+                  <AiFillCamera />
+                </i>{" "}
+                {"  "} Inserez une image
+              </span>
+            </label>
+
             <input
+              className={styles.input}
+              id="file"
               type="file"
               onChange={handleChange}
               accept=".jpg, .png, jpeg"
-            />
-          </p>
+            ></input>
+          </div>
         </div>
 
         <div className={style.label}>
@@ -140,7 +153,7 @@ const Index = () => {
           }}
         />
         {error && <span>{errorMessage}</span>}
-        <ButtonSubmit value="Register" />
+        <ButtonSubmit type="submit" value="Register" />
       </form>
       <SubImage />
     </div>

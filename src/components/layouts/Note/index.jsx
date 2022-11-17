@@ -9,7 +9,11 @@ import TextArea from "../TextArea";
 
 const Index = ({ setIsNoteDisplayed }) => {
   const [note, setNote] = useState({ lines: ["azeaze"] });
-
+  
+  const handleSubmit = () => {
+    
+    setIsNoteDisplayed(false)
+  }
   return (
     <div className={styles.wrapper}>
       <form className={styles.paper} method="get" action="">
@@ -34,7 +38,7 @@ const Index = ({ setIsNoteDisplayed }) => {
         />
         <input
           className={styles.button}
-          onClick={() => setIsNoteDisplayed(false)}
+          onClick={() =>  handleSubmit() }
           type="submit"
           value="Cancel"
         />
