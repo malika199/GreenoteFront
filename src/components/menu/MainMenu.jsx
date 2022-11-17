@@ -50,7 +50,7 @@ export default function MainMenu() {
               <img
                 alt="ek_image"
                 className={styles.img}
-                src={(user && user.profilPecture) || ""}
+                src={(user && user.profilPecture) != null ? (user && user.profilPecture) : 'https://www.super-blagues.fr/assets/images/profil/profil_defaut.png'}
               />
               <span className={styles.c_avatar_status}></span>
             </div>
@@ -67,9 +67,9 @@ export default function MainMenu() {
 
         <div className={styles.wrapper}>
           <a href={"/acceuil"}>
-            <button value={"Acceuil"} className={styles.acceuilbtn}>
+            <button value={"Accueil"} className={styles.acceuilbtn}>
               <IoIosHome />
-              Acceuil
+              Accueil
             </button>
           </a>
           <div className={styles.search_input}>

@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import styles from "./createNote.module.scss";
-
-import { useGetNotes } from "../../menu/useGetElements";
-import { createLine } from "../Line/lineHelpers";
 import { createNote } from "../Note/noteHelpers";
 import TextArea from "../TextArea";
 

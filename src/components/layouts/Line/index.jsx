@@ -30,19 +30,6 @@ const Index = ({ lineId, note, setNote, index }) => {
   function manageElement(e) {
     setHasFocus(false);
 
-    if (e.code === "Space") {
-      //create new element
-      addLine();
-      // set focus on created element
-      setTimeout(() => {
-        const form = e.target.form;
-        const index = [...form].indexOf(e.target);
-        console.log(index);
-        form[index + 1].focus();
-        e.preventDefault();
-      }, 100);
-    }
-
     if (e.key === "/") {
       setHasFocus(true);
     }
@@ -63,7 +50,7 @@ const Index = ({ lineId, note, setNote, index }) => {
   return (
     <div className={className}>
       <div className={styles.new}>
-        <input
+        <textarea
           value={line?.text}
           type="text"
           size={size}

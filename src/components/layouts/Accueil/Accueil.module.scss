@@ -1,4 +1,3 @@
-
 .form__group {
     width: 80%;
     height: 100%;
@@ -10,8 +9,12 @@
         color: #eaeaea;
         
     }
-
-
+    
+    .notesnontainer{
+        width: 40px;
+    }
+    
+    
     .wrapper{
         height: 130%;
         margin-left: 60px;
@@ -40,13 +43,14 @@
         border-color: #ddff00;
     }
     .textnote{
-        height: 250px;
-        width: 200px;
+        height: 20%;
+        width: 1250px;
         margin-left: 20px;
         margin-right: 20px;
         margin-top: 20px;
-        margin-bottom: 100px;
+        margin-bottom: 80px;
         padding: 50px;
+        font-size: large;
         background-color: #000000;
         border-radius: 30px;
         color: #e2e2e2;
@@ -64,7 +68,7 @@
         position: absolute;
         bottom: 20%;
         margin-left: -1%;
-    
-    
+        
+        
     }
 }

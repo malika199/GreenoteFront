@@ -53,7 +53,6 @@ const Index = () => {
       authService
         .updateUser(token, { ...user, profilPecture: url })
         .then((data) => {
-          console.log(data);
           setSuccess(true);
           setUser(data.user);
         })
@@ -118,7 +117,7 @@ const Index = () => {
               )}
               <img
                 className={isReadonly ? styles.img1 : styles.img}
-                src={(user && user.profilPecture) || ""}
+                src={(user && user.profilPecture) != null ? (user && user.profilPecture) : 'https://www.super-blagues.fr/assets/images/profil/profil_defaut.png'}
               />
             </div>
 
@@ -133,7 +132,7 @@ const Index = () => {
               <div className={styles.col6}>
                 <Input
                   readOnly={isReadonly}
-                  label="username"
+                  label="USERNAME"
                   type="text"
                   id="username"
                   name="username"

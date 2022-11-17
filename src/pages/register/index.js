@@ -153,7 +153,7 @@ const Index = () => {
           }}
         />
         {error && <span>{errorMessage}</span>}
-        <ButtonSubmit type="submit" value="Register" />
+        <ButtonSubmit className={{style}} type="submit" value="Register" />
       </form>
       <SubImage />
     </div>
