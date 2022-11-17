@@ -29,7 +29,7 @@ const index = () => {
                 <span>Never at water me might. On formed merits hunted unable merely by mr whence or. Possession the unpleasing simplicity her uncommonly.</span>
             </div>
         </div>
-        <img  className={styles.capecr} src={"../../../images/capecr.png"}/>
+        <img  className={styles.capecr} src={"../../../images/neww.jpg"}/>
         <svg className={styles.Ellipse}>
             <ellipse className={styles.Ellipsep} rx="228" ry="228" cx="228" cy="228"/>
         </svg>
